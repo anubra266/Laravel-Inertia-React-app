@@ -1,14 +1,14 @@
 import { InertiaLink } from "@inertiajs/inertia-react";
 import React from "react";
+import Navbar from "../Layouts/Navbar";
 
-function Example() {
+function Home() {
     return (
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <div className="card-header">Home Component</div>
-                        <InertiaLink href="/about">About</InertiaLink>
+                        <Navbar />
 
                         <div className="card-body">I'm an Home component!</div>
                     </div>
@@ -18,4 +18,4 @@ function Example() {
     );
 }
 
-export default Example;
+export default Home;

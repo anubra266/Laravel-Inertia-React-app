@@ -1,5 +1,6 @@
 import { InertiaLink } from "@inertiajs/inertia-react";
 import React from "react";
+import Navbar from "../Layouts/Navbar";
 
 function About() {
     return (
@@ -7,8 +8,7 @@ function About() {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <div className="card-header">About Component</div>
-                        <InertiaLink href="/">Home</InertiaLink>
+                        <Navbar />
 
                         <div className="card-body">I'm an About component!</div>
                     </div>

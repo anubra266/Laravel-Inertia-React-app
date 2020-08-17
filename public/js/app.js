@@ -31247,35 +31247,73 @@ if (false) {} else {
 var map = {
 	"./About": [
 		"./resources/js/Pages/About/index.js",
+		9,
 		0
 	],
 	"./About/": [
 		"./resources/js/Pages/About/index.js",
+		9,
 		0
 	],
 	"./About/index": [
 		"./resources/js/Pages/About/index.js",
+		9,
 		0
 	],
 	"./About/index.js": [
 		"./resources/js/Pages/About/index.js",
+		9,
 		0
+	],
+	"./Contact": [
+		"./resources/js/Pages/Contact/index.js",
+		9,
+		1
+	],
+	"./Contact/": [
+		"./resources/js/Pages/Contact/index.js",
+		9,
+		1
+	],
+	"./Contact/index": [
+		"./resources/js/Pages/Contact/index.js",
+		9,
+		1
+	],
+	"./Contact/index.js": [
+		"./resources/js/Pages/Contact/index.js",
+		9,
+		1
 	],
 	"./Home": [
 		"./resources/js/Pages/Home/index.js",
+		9,
 		2
 	],
 	"./Home/": [
 		"./resources/js/Pages/Home/index.js",
+		9,
 		2
 	],
 	"./Home/index": [
 		"./resources/js/Pages/Home/index.js",
+		9,
 		2
 	],
 	"./Home/index.js": [
 		"./resources/js/Pages/Home/index.js",
+		9,
 		2
+	],
+	"./Layouts/Navbar": [
+		"./resources/js/Pages/Layouts/Navbar.js",
+		7,
+		3
+	],
+	"./Layouts/Navbar.js": [
+		"./resources/js/Pages/Layouts/Navbar.js",
+		7,
+		3
 	]
 };
 function webpackAsyncContext(req) {
@@ -31288,8 +31326,8 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[1]).then(function() {
-		return __webpack_require__(id);
+	return __webpack_require__.e(ids[2]).then(function() {
+		return __webpack_require__.t(id, ids[1])
 	});
 }
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
