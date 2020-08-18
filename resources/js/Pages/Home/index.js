@@ -5,7 +5,7 @@ import Navbar from "@/Shared/Navbar";
 
 function Home() {
     return (
-        <div className="container">
+        <div className="container bg-dark">
             <Helmet title="Home" />
             <div className="row justify-content-center">
                 <div className="col-md-8">
