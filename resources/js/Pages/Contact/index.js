@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { Inertia } from "@inertiajs/inertia";
 import { InertiaLink, useRememberedState } from "@inertiajs/inertia-react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/Shared/Navbar";
 
 function Contact() {
+    const loader = useRef(null);
+
     const [values, setValues] = useRememberedState({
         first_name: "",
         last_name: "",
@@ -30,7 +32,7 @@ function Contact() {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <Navbar />
+                        <Navbar loader={loader} />
                         <div className="card-body">
                             Contact Us! {values.first_name}
                             <form onSubmit={handleSubmit}>

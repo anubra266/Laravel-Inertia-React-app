@@ -42,6 +42,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Contact() {
+  var loader = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
   var _useRememberedState = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["useRememberedState"])({
     first_name: "",
     last_name: "",
@@ -74,7 +76,9 @@ function Contact() {
     className: "col-md-8"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    loader: loader
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
   }, "Contact Us! ", values.first_name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: handleSubmit
@@ -130,16 +134,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_use__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-use */ "./node_modules/react-use/esm/index.js");
 /* harmony import */ var _Routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Routes */ "./resources/js/Shared/Routes.js");
+/* harmony import */ var react_top_loading_bar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-top-loading-bar */ "./node_modules/react-top-loading-bar/dist/index.modern.js");
 
 
 
 
 
-function Navbar() {
+
+function Navbar(_ref) {
+  var loader = _ref.loader;
   var batteryState = Object(react_use__WEBPACK_IMPORTED_MODULE_2__["useBattery"])();
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     className: "navbar navbar-expand-lg navbar-dark bg-dark"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_top_loading_bar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    color: "red",
+    ref: loader
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "navbar-brand",
     href: "#"
   }, "Navbar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -162,6 +172,9 @@ function Navbar() {
       key: "nav-".concat(key),
       className: "nav-item ".concat("active")
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+      onClick: function onClick() {
+        return loader && loader.current.continuousStart();
+      },
       className: "nav-link",
       href: route(NavItem.route)
     }, NavItem.name));
