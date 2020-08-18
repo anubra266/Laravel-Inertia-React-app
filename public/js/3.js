@@ -23,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 function Home() {
   var loader = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container bg-dark"
+    className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_2__["Helmet"], {
     title: "Home"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -65,14 +65,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Navbar(_ref) {
   var loader = _ref.loader;
   var batteryState = Object(react_use__WEBPACK_IMPORTED_MODULE_2__["useBattery"])();
+  Object(react_use__WEBPACK_IMPORTED_MODULE_2__["useEffectOnce"])(function () {
+    //*complete loader loading
+    loader && loader.current.complete();
+  });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     className: "navbar navbar-expand-lg navbar-dark bg-dark"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_top_loading_bar__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    color: "red",
-    ref: loader
+    color: "black",
+    ref: loader,
+    waitingTime: 0
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "navbar-brand",
     href: "#"

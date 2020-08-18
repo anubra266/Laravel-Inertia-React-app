@@ -3,13 +3,17 @@ import { InertiaLink } from "@inertiajs/inertia-react";
 import { useBattery } from "react-use";
 import routes from "./Routes";
 import LoadingBar from "react-top-loading-bar";
+import { useEffectOnce } from "react-use";
 
 function Navbar({ loader }) {
     const batteryState = useBattery();
-
+    useEffectOnce(() => {
+        //*complete loader loading
+        loader && loader.current.complete();
+    });
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <LoadingBar color="red" ref={loader} />
+            <LoadingBar color="black" ref={loader} waitingTime={0} />
 
             <a className="navbar-brand" href="#">
                 Navbar
@@ -35,7 +39,8 @@ function Navbar({ loader }) {
                             >
                                 <InertiaLink
                                     onClick={() =>
-                                        loader&&loader.current.continuousStart()
+                                        loader &&
+                                        loader.current.continuousStart()
                                     }
                                     className="nav-link"
                                     href={route(NavItem.route)}

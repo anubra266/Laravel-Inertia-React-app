@@ -24,7 +24,9 @@ function Contact() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        Inertia.post("/users", values);
+        //*If it was an edit form
+        values._method = "PUT";
+        Inertia.post("/submit", values);
     }
     return (
         <div className="container">
