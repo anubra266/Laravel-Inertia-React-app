@@ -17,19 +17,19 @@ Route::get('/', function () {
     return Inertia::render('Home', [
         'users' => ''
         ]);
-    })->name('index');
+    })->name('home');
 
     Route::get('/about', function () {
         return Inertia::render('About');
-    });
+    })->name('about');
 
 
     Route::get('/contact', function () {
         return Inertia::render('Contact');
-    });
+    })->name('contact');
     Route::group(['middleware'=>['auth']], function () {
 
     });
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

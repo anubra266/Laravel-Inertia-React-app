@@ -157,14 +157,14 @@ function Navbar() {
     id: "navbarNav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "navbar-nav"
-  }, _Routes__WEBPACK_IMPORTED_MODULE_3__["default"].general.routes.map(function (route, key) {
+  }, _Routes__WEBPACK_IMPORTED_MODULE_3__["default"].general.routes.map(function (NavItem, key) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       key: "nav-".concat(key),
       className: "nav-item ".concat("active")
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
       className: "nav-link",
-      href: route.url
-    }, route.name));
+      href: route(NavItem.route)
+    }, NavItem.name));
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text-info"
   }, (batteryState.level * 100).toFixed(0), "%", " ", batteryState.charging ? "Charging" : ""));
@@ -187,14 +187,14 @@ __webpack_require__.r(__webpack_exports__);
   //role name as a key.
   general: {
     routes: [{
-      name: "Home",
-      url: "/"
+      name: 'Home',
+      route: 'home'
     }, {
-      name: "About",
-      url: "/about"
+      name: 'About',
+      route: 'about'
     }, {
-      name: "Contact",
-      url: "/contact"
+      name: 'Contact',
+      route: 'contact'
     }]
   }
 });

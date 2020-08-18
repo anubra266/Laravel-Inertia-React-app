@@ -22,6 +22,8 @@ npm run dev
 cp .env.example .env
 
 php artisan key:generate
+
+php artisan ziggy:generate
 ```
 **I'm not dumb, the above is all self explanatory.**
 

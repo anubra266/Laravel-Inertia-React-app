@@ -3,16 +3,16 @@ export default {
     general: {
         routes: [
             {
-                name: "Home",
-                url: "/"
+                name: 'Home',
+                route: 'home'
             },
             {
-                name: "About",
-                url: "/about"
+                name: 'About',
+                route: 'about'
             },
             {
-                name: "Contact",
-                url: "/contact"
+                name: 'Contact',
+                route: 'contact'
             }
         ]
     }

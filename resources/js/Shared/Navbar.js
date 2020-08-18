@@ -23,8 +23,7 @@ function Navbar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
-
-                    {routes.general.routes.map((route, key) => {
+                    {routes.general.routes.map((NavItem, key) => {
                         return (
                             <li
                                 key={`nav-${key}`}
@@ -32,9 +31,9 @@ function Navbar() {
                             >
                                 <InertiaLink
                                     className="nav-link"
-                                    href={route.url}
+                                    href={route(NavItem.route)}
                                 >
-                                    {route.name}
+                                    {NavItem.name}
                                 </InertiaLink>
                             </li>
                         );
