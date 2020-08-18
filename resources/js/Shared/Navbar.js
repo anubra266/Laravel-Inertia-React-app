@@ -1,37 +1,39 @@
 import React, { useRef } from "react";
-import { InertiaLink } from "@inertiajs/inertia-react";
-import { useBattery } from "react-use";
-import routes from "./Routes";
 import LoadingBar from "react-top-loading-bar";
-import { useEffectOnce } from "react-use";
+import { useBattery, useEffectOnce } from "react-use";
+import { InertiaLink } from "@inertiajs/inertia-react";
+
 import { loadPage } from "@/Helpers/PageLoad";
+import routes from "./Routes";
 function Navbar({ pageLoader }) {
+    //* load battery State
     const batteryState = useBattery();
+    //* Start page Load on Navigator Change
+    loadPage(pageLoader);
     useEffectOnce(() => {
         //*complete pageLoader loading
         pageLoader && pageLoader.current.complete();
     });
-    loadPage(pageLoader);
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <LoadingBar color="black" ref={pageLoader} waitingTime={0} />
+            <LoadingBar color="black" ref={pageLoaders} waitingTime={0} />
 
             <a className="navbar-brand" href="#">
-                Navbar
+                InertiaApp
             </a>
             <button
-                className="navbar-toggler"
+                className="navbar-toggler collapsed"
                 type="button"
                 data-toggle="collapse"
-                data-target="#navbarNav"
-                aria-controls="navbarNav"
+                data-target="#navbarText"
+                aria-controls="navbarText"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
             >
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
+            <div className="collapse navbar-collapse" id="navbarText">
+                <ul className="navbar-nav mr-auto">
                     {routes.general.routes.map((NavItem, key) => {
                         return (
                             <li
@@ -48,11 +50,11 @@ function Navbar({ pageLoader }) {
                         );
                     })}
                 </ul>
+                <span className="text-info navbar-text">
+                    {(batteryState.level * 100).toFixed(0)}%{" "}
+                    {batteryState.charging ? "Charging" : ""}
+                </span>
             </div>
-            <span className="text-info">
-                {(batteryState.level * 100).toFixed(0)}%{" "}
-                {batteryState.charging ? "Charging" : ""}
-            </span>
         </nav>
     );
 }

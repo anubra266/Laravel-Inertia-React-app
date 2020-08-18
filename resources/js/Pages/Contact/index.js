@@ -3,7 +3,6 @@ import { Inertia } from "@inertiajs/inertia";
 import { usePage } from "@inertiajs/inertia-react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/Shared/Navbar";
-import { Button } from "reactstrap";
 
 function Contact() {
     const pageLoader = useRef(null);
