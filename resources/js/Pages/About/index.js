@@ -1,10 +1,12 @@
-import { InertiaLink } from "@inertiajs/inertia-react";
 import React from "react";
-import Navbar from "../Layouts/Navbar";
+import { InertiaLink } from "@inertiajs/inertia-react";
+import { Helmet } from "react-helmet";
+import Navbar from "../../Shared/Navbar";
 
 function About() {
     return (
         <div className="container">
+            <Helmet title="About" />
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">

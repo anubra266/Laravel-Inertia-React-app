@@ -1,10 +1,11 @@
-import { Inertia } from "@inertiajs/inertia";
-import { InertiaLink } from "@inertiajs/inertia-react";
 import React, { useState } from "react";
-import Navbar from "../Layouts/Navbar";
+import { Inertia } from "@inertiajs/inertia";
+import { InertiaLink, useRememberedState } from "@inertiajs/inertia-react";
+import { Helmet } from "react-helmet";
+import Navbar from "../../Shared/Navbar";
 
 function Contact() {
-    const [values, setValues] = useState({
+    const [values, setValues] = useRememberedState({
         first_name: "",
         last_name: "",
         email: ""
@@ -25,12 +26,13 @@ function Contact() {
     }
     return (
         <div className="container">
+            <Helmet title="Contact" />
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                    <Navbar />
+                        <Navbar />
                         <div className="card-body">
-                            Contact Us!
+                            Contact Us! {values.first_name}
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="first_name">

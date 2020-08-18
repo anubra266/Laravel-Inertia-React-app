@@ -31247,103 +31247,79 @@ if (false) {} else {
 var map = {
 	"./About": [
 		"./resources/js/Pages/About/index.js",
-		9,
-		0
+		0,
+		1
 	],
 	"./About/": [
 		"./resources/js/Pages/About/index.js",
-		9,
-		0
+		0,
+		1
 	],
 	"./About/index": [
 		"./resources/js/Pages/About/index.js",
-		9,
-		0
+		0,
+		1
 	],
 	"./About/index.js": [
 		"./resources/js/Pages/About/index.js",
-		9,
-		0
+		0,
+		1
 	],
 	"./Contact": [
 		"./resources/js/Pages/Contact/index.js",
-		9,
-		1
+		0,
+		2
 	],
 	"./Contact/": [
 		"./resources/js/Pages/Contact/index.js",
-		9,
-		1
+		0,
+		2
 	],
 	"./Contact/index": [
 		"./resources/js/Pages/Contact/index.js",
-		9,
-		1
+		0,
+		2
 	],
 	"./Contact/index.js": [
 		"./resources/js/Pages/Contact/index.js",
-		9,
-		1
+		0,
+		2
 	],
 	"./Error": [
 		"./resources/js/Pages/Error/index.js",
-		9,
-		3
+		4
 	],
 	"./Error/": [
 		"./resources/js/Pages/Error/index.js",
-		9,
-		3
+		4
 	],
 	"./Error/index": [
 		"./resources/js/Pages/Error/index.js",
-		9,
-		3
+		4
 	],
 	"./Error/index.js": [
 		"./resources/js/Pages/Error/index.js",
-		9,
-		3
+		4
 	],
 	"./Home": [
 		"./resources/js/Pages/Home/index.js",
-		9,
-		2
+		0,
+		3
 	],
 	"./Home/": [
 		"./resources/js/Pages/Home/index.js",
-		9,
-		2
+		0,
+		3
 	],
 	"./Home/index": [
 		"./resources/js/Pages/Home/index.js",
-		9,
-		2
+		0,
+		3
 	],
 	"./Home/index.js": [
 		"./resources/js/Pages/Home/index.js",
-		9,
-		2
-	],
-	"./Layouts/Navbar": [
-		"./resources/js/Pages/Layouts/Navbar.js",
-		9,
-		4
-	],
-	"./Layouts/Navbar.js": [
-		"./resources/js/Pages/Layouts/Navbar.js",
-		9,
-		4
-	],
-	"./Layouts/routes": [
-		"./resources/js/Pages/Layouts/routes.js",
-		7,
-		5
-	],
-	"./Layouts/routes.js": [
-		"./resources/js/Pages/Layouts/routes.js",
-		7,
-		5
+		0,
+		3
 	]
 };
 function webpackAsyncContext(req) {
@@ -31356,8 +31332,8 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[2]).then(function() {
-		return __webpack_require__.t(id, ids[1])
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+		return __webpack_require__(id);
 	});
 }
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
