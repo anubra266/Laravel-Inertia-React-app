@@ -4,16 +4,17 @@ import { useBattery } from "react-use";
 import routes from "./Routes";
 import LoadingBar from "react-top-loading-bar";
 import { useEffectOnce } from "react-use";
-
-function Navbar({ loader }) {
+import { loadPage } from "@/Helpers/PageLoad";
+function Navbar({ pageLoader }) {
     const batteryState = useBattery();
     useEffectOnce(() => {
-        //*complete loader loading
-        loader && loader.current.complete();
+        //*complete pageLoader loading
+        pageLoader && pageLoader.current.complete();
     });
+    loadPage(pageLoader);
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <LoadingBar color="black" ref={loader} waitingTime={0} />
+            <LoadingBar color="black" ref={pageLoader} waitingTime={0} />
 
             <a className="navbar-brand" href="#">
                 Navbar
@@ -38,10 +39,6 @@ function Navbar({ loader }) {
                                 className={`nav-item ${`active`}`}
                             >
                                 <InertiaLink
-                                    onClick={() =>
-                                        loader &&
-                                        loader.current.continuousStart()
-                                    }
                                     className="nav-link"
                                     href={route(NavItem.route)}
                                 >

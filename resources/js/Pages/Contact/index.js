@@ -6,7 +6,7 @@ import Navbar from "@/Shared/Navbar";
 import { random } from "lodash";
 
 function Contact() {
-    const loader = useRef(null);
+    const pageLoader = useRef(null);
     const { errors } = usePage();
     const [values, setValues] = useState({
         first_name: "",
@@ -35,7 +35,7 @@ function Contact() {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <Navbar loader={loader} />
+                        <Navbar pageLoader={pageLoader} />
                         <div className="card-body">
                             <h4>Contact Us! </h4>
                             <form onSubmit={handleSubmit}>
