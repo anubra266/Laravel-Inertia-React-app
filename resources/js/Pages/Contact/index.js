@@ -3,7 +3,7 @@ import { Inertia } from "@inertiajs/inertia";
 import { usePage } from "@inertiajs/inertia-react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/Shared/Navbar";
-import { random } from "lodash";
+import { Button } from "reactstrap";
 
 function Contact() {
     const pageLoader = useRef(null);
@@ -44,15 +44,16 @@ function Contact() {
                                         First name:
                                     </label>
                                     <input
-                                        className="form-control"
+                                        className={`form-control ${errors.first_name &&
+                                            "is-invalid"}`}
                                         id="first_name"
                                         value={values.first_name}
                                         onChange={handleChange}
                                     />
                                     {errors.first_name && (
-                                        <label className="text-danger">
+                                        <div className="invalid-feedback">
                                             {errors.first_name[0]}
-                                        </label>
+                                        </div>
                                     )}
                                 </div>
                                 <div className="form-group">
@@ -60,29 +61,31 @@ function Contact() {
                                         Last name:
                                     </label>
                                     <input
-                                        className="form-control"
+                                        className={`form-control ${errors.last_name &&
+                                            "is-invalid"}`}
                                         id="last_name"
                                         value={values.last_name}
                                         onChange={handleChange}
                                     />
                                     {errors.last_name && (
-                                        <label className="text-danger">
+                                        <div className="invalid-feedback">
                                             {errors.last_name[0]}
-                                        </label>
+                                        </div>
                                     )}
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="email">Email:</label>
                                     <input
-                                        className="form-control"
+                                        className={`form-control ${errors.email &&
+                                            "is-invalid"}`}
                                         id="email"
                                         value={values.email}
                                         onChange={handleChange}
                                     />
                                     {errors.email && (
-                                        <label className="text-danger">
+                                        <div className="invalid-feedback">
                                             {errors.email[0]}
-                                        </label>
+                                        </div>
                                     )}
                                 </div>
                                 <button
