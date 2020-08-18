@@ -1,13 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Inertia } from "@inertiajs/inertia";
-import { usePage, useRememberedState } from "@inertiajs/inertia-react";
+import { usePage } from "@inertiajs/inertia-react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/Shared/Navbar";
+import { random } from "lodash";
 
 function Contact() {
     const loader = useRef(null);
     const { errors } = usePage();
-    const [values, setValues] = useRememberedState({
+    const [values, setValues] = useState({
         first_name: "",
         last_name: "",
         email: ""

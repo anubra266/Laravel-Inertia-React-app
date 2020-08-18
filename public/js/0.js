@@ -5,9 +5,232 @@
   !*** ./resources/js/Pages/Contact/index.js ***!
   \*********************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /var/www/html/InertiaApp/resources/js/Pages/Contact/index.js: Expected corresponding JSX closing tag for <span> (79:24)\n\n\u001b[0m \u001b[90m 77 | \u001b[39m                                \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mbutton\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 78 | \u001b[39m                            \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mform\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 79 | \u001b[39m                        \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 80 | \u001b[39m                    \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 81 | \u001b[39m                \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 82 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at Object._raise (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:764:17)\n    at Object.raiseWithData (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:757:17)\n    at Object.raise (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:751:17)\n    at Object.jsxParseElementAt (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:4648:16)\n    at Object.jsxParseElementAt (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:4616:32)\n    at Object.jsxParseElementAt (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:4616:32)\n    at Object.jsxParseElementAt (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:4616:32)\n    at Object.jsxParseElementAt (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:4616:32)\n    at Object.jsxParseElement (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:4674:17)\n    at Object.parseExprAtom (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:4681:19)\n    at Object.parseExprSubscripts (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9789:23)\n    at Object.parseUpdate (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9769:21)\n    at Object.parseMaybeUnary (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9758:17)\n    at Object.parseExprOps (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9628:23)\n    at Object.parseMaybeConditional (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Object.parseMaybeAssign (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9565:21)\n    at Object.parseParenAndDistinguishExpression (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:10418:28)\n    at Object.parseExprAtom (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:10122:21)\n    at Object.parseExprAtom (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:4686:20)\n    at Object.parseExprSubscripts (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9789:23)\n    at Object.parseUpdate (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9769:21)\n    at Object.parseMaybeUnary (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9758:17)\n    at Object.parseExprOps (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9628:23)\n    at Object.parseMaybeConditional (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Object.parseMaybeAssign (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9565:21)\n    at Object.parseExpression (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:9517:23)\n    at Object.parseReturnStatement (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:11700:28)\n    at Object.parseStatementContent (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:11379:21)\n    at Object.parseStatement (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:11331:17)\n    at Object.parseBlockOrModuleBlockBody (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:11913:25)\n    at Object.parseBlockBody (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:11899:10)\n    at Object.parseBlock (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:11883:10)\n    at Object.parseFunctionBody (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:10901:24)\n    at Object.parseFunctionBodyAndFinish (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:10884:10)\n    at /var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:12053:12\n    at Object.withTopicForbiddingContext (/var/www/html/InertiaApp/node_modules/@babel/parser/lib/index.js:11206:14)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
+/* harmony import */ var _Shared_Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Shared/Navbar */ "./resources/js/Shared/Navbar.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_5__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+function Contact() {
+  var loader = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
+  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["usePage"])(),
+      errors = _usePage.errors;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    first_name: "",
+    last_name: "",
+    email: ""
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      values = _useState2[0],
+      setValues = _useState2[1];
+
+  function handleChange(e) {
+    var key = e.target.id;
+    var value = e.target.value;
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault(); //*If it was an edit form
+
+    values._method = "PUT";
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__["Inertia"].post("/submit", values);
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_3__["Helmet"], {
+    title: "Contact"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    loader: loader
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Contact Us! "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "first_name"
+  }, "First name:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "form-control",
+    id: "first_name",
+    value: values.first_name,
+    onChange: handleChange
+  }), errors.first_name && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "text-danger"
+  }, errors.first_name[0])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "last_name"
+  }, "Last name:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "form-control",
+    id: "last_name",
+    value: values.last_name,
+    onChange: handleChange
+  }), errors.last_name && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "text-danger"
+  }, errors.last_name[0])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "email"
+  }, "Email:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "form-control",
+    id: "email",
+    value: values.email,
+    onChange: handleChange
+  }), errors.email && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "text-danger"
+  }, errors.email[0])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "btn btn-primary",
+    type: "submit"
+  }, "Submit")))))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Contact);
+
+/***/ }),
+
+/***/ "./resources/js/Shared/Navbar.js":
+/*!***************************************!*\
+  !*** ./resources/js/Shared/Navbar.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_use__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-use */ "./node_modules/react-use/esm/index.js");
+/* harmony import */ var _Routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Routes */ "./resources/js/Shared/Routes.js");
+/* harmony import */ var react_top_loading_bar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-top-loading-bar */ "./node_modules/react-top-loading-bar/dist/index.modern.js");
+
+
+
+
+
+
+
+function Navbar(_ref) {
+  var loader = _ref.loader;
+  var batteryState = Object(react_use__WEBPACK_IMPORTED_MODULE_2__["useBattery"])();
+  Object(react_use__WEBPACK_IMPORTED_MODULE_2__["useEffectOnce"])(function () {
+    //*complete loader loading
+    loader && loader.current.complete();
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+    className: "navbar navbar-expand-lg navbar-dark bg-dark"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_top_loading_bar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    color: "black",
+    ref: loader,
+    waitingTime: 0
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "navbar-brand",
+    href: "#"
+  }, "Navbar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "navbar-toggler",
+    type: "button",
+    "data-toggle": "collapse",
+    "data-target": "#navbarNav",
+    "aria-controls": "navbarNav",
+    "aria-expanded": "false",
+    "aria-label": "Toggle navigation"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "navbar-toggler-icon"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "collapse navbar-collapse",
+    id: "navbarNav"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "navbar-nav"
+  }, _Routes__WEBPACK_IMPORTED_MODULE_3__["default"].general.routes.map(function (NavItem, key) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      key: "nav-".concat(key),
+      className: "nav-item ".concat("active")
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
+      onClick: function onClick() {
+        return loader && loader.current.continuousStart();
+      },
+      className: "nav-link",
+      href: route(NavItem.route)
+    }, NavItem.name));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-info"
+  }, (batteryState.level * 100).toFixed(0), "%", " ", batteryState.charging ? "Charging" : ""));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Navbar);
+
+/***/ }),
+
+/***/ "./resources/js/Shared/Routes.js":
+/*!***************************************!*\
+  !*** ./resources/js/Shared/Routes.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  //role name as a key.
+  general: {
+    routes: [{
+      name: 'Home',
+      route: 'home'
+    }, {
+      name: 'About',
+      route: 'about'
+    }, {
+      name: 'Contact',
+      route: 'contact'
+    }]
+  }
+});
 
 /***/ })
 
