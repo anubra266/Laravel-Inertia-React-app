@@ -1,5 +1,6 @@
 import { InertiaLink } from "@inertiajs/inertia-react";
 import React from "react";
+import routes from "./routes";
 
 function Navbar() {
     return (
@@ -20,21 +21,15 @@ function Navbar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
-                    <li className="nav-item active">
-                        <InertiaLink className="nav-link" href="/">
-                            Home
-                        </InertiaLink>
-                    </li>
-                    <li className="nav-item">
-                        <InertiaLink className="nav-link" href="/about">
-                            About
-                        </InertiaLink>
-                    </li>
-                    <li className="nav-item">
-                        <InertiaLink className="nav-link" href="/contact">
-                            Contact
-                        </InertiaLink>
-                    </li>
+                {routes.general.routes.map((route)=>{
+                    return (
+                        <li className={`nav-item ${`active`}`}>
+                            <InertiaLink className="nav-link" href={route.url}>
+                                {route.name}
+                            </InertiaLink>
+                        </li>
+                    );
+                })}
                 </ul>
             </div>
         </nav>
