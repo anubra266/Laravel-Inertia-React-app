@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->registerInertia();
     }
 
     /**
@@ -25,8 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //
+    }
 
-
+    public function registerInertia()
+    {
         //* Make errors available to react
         Inertia::share([
             'errors' => function () {
@@ -35,5 +38,6 @@ class AppServiceProvider extends ServiceProvider
                     : (object) [];
             },
         ]);
+        
     }
 }

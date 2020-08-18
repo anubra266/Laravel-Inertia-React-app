@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import { Inertia } from "@inertiajs/inertia";
-import { InertiaLink, useRememberedState } from "@inertiajs/inertia-react";
+import { usePage, useRememberedState } from "@inertiajs/inertia-react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/Shared/Navbar";
 
 function Contact() {
     const loader = useRef(null);
-
+    const { errors } = usePage();
     const [values, setValues] = useRememberedState({
         first_name: "",
         last_name: "",
@@ -36,7 +36,7 @@ function Contact() {
                     <div className="card">
                         <Navbar loader={loader} />
                         <div className="card-body">
-                            Contact Us! {values.first_name}
+                            <h4>Contact Us! </h4>
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="first_name">
@@ -48,6 +48,11 @@ function Contact() {
                                         value={values.first_name}
                                         onChange={handleChange}
                                     />
+                                    {errors.first_name && (
+                                        <label className="text-danger">
+                                            {errors.first_name[0]}
+                                        </label>
+                                    )}
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="last_name">
@@ -59,15 +64,25 @@ function Contact() {
                                         value={values.last_name}
                                         onChange={handleChange}
                                     />
-                                    <label htmlFor="email">Email:</label>
+                                    {errors.last_name && (
+                                        <label className="text-danger">
+                                            {errors.last_name[0]}
+                                        </label>
+                                    )}
                                 </div>
                                 <div className="form-group">
+                                    <label htmlFor="email">Email:</label>
                                     <input
                                         className="form-control"
                                         id="email"
                                         value={values.email}
                                         onChange={handleChange}
                                     />
+                                    {errors.email && (
+                                        <label className="text-danger">
+                                            {errors.email[0]}
+                                        </label>
+                                    )}
                                 </div>
                                 <button
                                     className="btn btn-primary"
