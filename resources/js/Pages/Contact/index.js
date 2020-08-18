@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Inertia } from "@inertiajs/inertia";
 import { InertiaLink, useRememberedState } from "@inertiajs/inertia-react";
 import { Helmet } from "react-helmet";
-import Navbar from "../../Shared/Navbar";
+import Navbar from "@/Shared/Navbar";
 
 function Contact() {
     const [values, setValues] = useRememberedState({

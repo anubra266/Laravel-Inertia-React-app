@@ -1,7 +1,7 @@
 import React from "react";
 import { InertiaLink } from "@inertiajs/inertia-react";
 import { useBattery } from "react-use";
-import routes from "./routes";
+import routes from "./Routes";
 
 function Navbar() {
     const batteryState = useBattery();
@@ -23,6 +23,7 @@ function Navbar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
+
                     {routes.general.routes.map((route, key) => {
                         return (
                             <li

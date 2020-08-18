@@ -10,6 +10,7 @@
     <script src="{{ mix('/js/app.js') }}" defer></script>
     <!-- End assets call-->
     <title>Inertia App</title>
+    @routes
 </head>
 
 <body>

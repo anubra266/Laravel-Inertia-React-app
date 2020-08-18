@@ -1,7 +1,7 @@
 import React from "react";
 import { InertiaLink } from "@inertiajs/inertia-react";
 import { Helmet } from "react-helmet";
-import Navbar from "../../Shared/Navbar";
+import Navbar from "@/Shared/Navbar";
 
 function About() {
     return (
