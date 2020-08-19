@@ -37,8 +37,7 @@ Route::put('/submit', function (Request $request) {
         'last_name' => 'required',
         'email' => 'required',
     ]);
-    dd($request->all());
-    return Inertia::render('Contact');
+    return redirect()->back()->with('success', 'Data accepted');
 })->name('submit');
 
 // Auth::routes();

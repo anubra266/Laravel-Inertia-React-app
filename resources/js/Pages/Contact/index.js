@@ -3,7 +3,7 @@ import { Inertia } from "@inertiajs/inertia";
 import { usePage } from "@inertiajs/inertia-react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/Shared/Navbar";
-
+import FlashMessages from "@/Helpers/FlashMessages";
 function Contact() {
     const pageLoader = useRef(null);
     const { errors } = usePage();
@@ -36,6 +36,7 @@ function Contact() {
                     <div className="card">
                         <Navbar pageLoader={pageLoader} />
                         <div className="card-body">
+                            <FlashMessages />
                             <h4>Contact Us! </h4>
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">

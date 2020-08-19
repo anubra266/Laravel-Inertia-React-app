@@ -30,19 +30,22 @@ class AppServiceProvider extends ServiceProvider
 
     public function registerInertia()
     {
-        //* Make errors available to react
         Inertia::share([
+            //* Make errors available to react
             'errors' => function () {
                 return Session::get('errors')
                     ? Session::get('errors')->getBag('default')->getMessages()
                     : (object) [];
             },
+            //* flash messages
+            'flash' => function () {
+                return [
+                    'success' => Session::get('success'),
+                    'error' => Session::get('error'),
+                ];
+            },
         ]);
 
-        // TODO check css import accross components
-        // TODO Flash messages sample in pingcrm-landish
-        // TODO clone pingcrm-landish repo
-        // TODO check https://mrrobot.usanetwork.com
 
     }
 }

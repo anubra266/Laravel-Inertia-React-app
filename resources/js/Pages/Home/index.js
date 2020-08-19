@@ -17,7 +17,7 @@ function Home() {
                         <div className="card">
                             <Navbar pageLoader={pageLoader} />
                             <div className="card-body">
-                                I'm an Home component!
+                                I'm an Home component with a different css stylesheet!
                             </div>
                         </div>
                     </div>
