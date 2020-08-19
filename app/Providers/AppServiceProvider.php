@@ -38,6 +38,11 @@ class AppServiceProvider extends ServiceProvider
                     : (object) [];
             },
         ]);
-        
+
+        // TODO check css import accross components
+        // TODO Flash messages sample in pingcrm-landish
+        // TODO clone pingcrm-landish repo
+        // TODO check https://mrrobot.usanetwork.com
+
     }
 }

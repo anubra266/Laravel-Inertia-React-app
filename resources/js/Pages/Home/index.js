@@ -9,7 +9,9 @@ function Home() {
     return (
         <CatchError>
             <div className="container">
-                <Helmet title="Home" />
+                <Helmet title="Home">
+                    <link rel="stylesheet" href="/css/home.css" />
+                </Helmet>
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="card">

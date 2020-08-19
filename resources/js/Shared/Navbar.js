@@ -16,7 +16,7 @@ function Navbar({ pageLoader }) {
     });
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <LoadingBar color="black" ref={pageLoaders} waitingTime={0} />
+            <LoadingBar color="black" ref={pageLoader} waitingTime={0} />
 
             <a className="navbar-brand" href="#">
                 InertiaApp
