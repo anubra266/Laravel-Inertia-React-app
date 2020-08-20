@@ -55,6 +55,7 @@ class Handler extends ExceptionHandler
         $response = parent::render($request, $exception);
         if (
             //show user friendly error pages in production
+            // App::environment('local')
             // App::environment('development')
             App::environment('production')
             && $request->header('X-Inertia')

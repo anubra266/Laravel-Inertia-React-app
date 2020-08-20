@@ -1,13 +1,11 @@
 import React, { useRef } from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/Shared/Navbar";
-import CatchError from "@/Helpers/CatchError";
 
 function Home() {
     const pageLoader = useRef(null);
 
     return (
-        <CatchError>
             <div className="container">
                 <Helmet title="Home">
                     <link rel="stylesheet" href="/css/home.css" />
@@ -23,7 +21,6 @@ function Home() {
                     </div>
                 </div>
             </div>
-        </CatchError>
     );
 }
 
