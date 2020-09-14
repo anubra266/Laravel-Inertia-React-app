@@ -8,6 +8,9 @@ Inertia.js lets you quickly build modern single-page React, Vue and Svelte apps 
 ## About This Repo
 This is my Inertia boilerplate for future projects with React. So it is Inertia-React not Inertia-Vue.
 
+## Notable Packages
+
+
 ## How do I set this up
 
 ```

@@ -31,7 +31,6 @@
         "@inertiajs/inertia": "^0.1.9",
         "@inertiajs/inertia-react": "^0.1.6",
         "antd": "^4.5.4",
-        "react-top-loading-bar": "^2.0.0",
         "reactstrap": "^8.5.1"
     }
 }

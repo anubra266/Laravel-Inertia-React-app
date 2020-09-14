@@ -1,23 +1,13 @@
-import React, { useRef } from "react";
-import LoadingBar from "react-top-loading-bar";
-import { useBattery, useEffectOnce } from "react-use";
+import React from "react";
+import { useBattery } from "react-use";
 import { InertiaLink } from "@inertiajs/inertia-react";
 
-import { loadPage } from "@/Helpers/PageLoad";
 import routes from "./Routes";
-function Navbar({ pageLoader }) {
+function Navbar() {
     //* load battery State
     const batteryState = useBattery();
-    //* Start page Load on Navigator Change
-    loadPage(pageLoader);
-    useEffectOnce(() => {
-        //*complete pageLoader loading
-        pageLoader && pageLoader.current.complete();
-    });
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <LoadingBar color="black" ref={pageLoader} waitingTime={0} />
-
             <a className="navbar-brand" href="#">
                 InertiaApp
             </a>

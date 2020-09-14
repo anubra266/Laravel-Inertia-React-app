@@ -30,15 +30,19 @@ Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
 
-//* Using put for testing purposes.
 Route::put('/submit', function (Request $request) {
     $request->validate([
         'first_name' => 'required',
         'last_name' => 'required',
         'email' => 'required',
+        'message' => 'required'
     ]);
     return redirect()->back()->with('success', 'Data accepted');
 })->name('submit');
+
+Route::get('/blog', function () {
+    return Inertia::render('Blog');
+})->name('blog');
 
 // Auth::routes();
 
@@ -63,4 +67,3 @@ Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->na
 Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 // Route::get('/home', 'HomeController@index')->name('home');
-

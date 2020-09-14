@@ -1,11 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Inertia } from "@inertiajs/inertia";
 import { usePage } from "@inertiajs/inertia-react";
 import { Helmet } from "react-helmet";
 import Navbar from "@/Shared/Navbar";
-import FlashMessages from "@/Helpers/FlashMessages";
+import FlashMessages from "@/Shared/FlashMessages";
 function Contact() {
-    const pageLoader = useRef(null);
     const { errors } = usePage();
     const [values, setValues] = useState({
         first_name: "",
@@ -24,9 +23,8 @@ function Contact() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        //*If it was an edit form
-        values._method = "PUT";
-        Inertia.post("/submit", values);
+        //*Inertia implements the custom methods
+        Inertia.put("/submit", values);
     }
     return (
         <div className="container">
@@ -34,7 +32,7 @@ function Contact() {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <Navbar pageLoader={pageLoader} />
+                        <Navbar />
                         <div className="card-body">
                             <FlashMessages />
                             <h4>Contact Us! </h4>
