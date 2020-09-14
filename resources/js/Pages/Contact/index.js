@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 import { Inertia } from "@inertiajs/inertia";
 import { usePage } from "@inertiajs/inertia-react";
-import { Helmet } from "react-helmet";
+
 import Navbar from "@/Shared/Navbar";
 import FlashMessages from "@/Shared/FlashMessages";
 function Contact() {
+    document.title = "Contact";
+
     const { errors } = usePage();
     const [values, setValues] = useState({
         first_name: "",
@@ -26,9 +29,9 @@ function Contact() {
         //*Inertia implements the custom methods
         Inertia.put("/submit", values);
     }
+
     return (
         <div className="container">
-            <Helmet title="Contact" />
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
@@ -86,6 +89,7 @@ function Contact() {
                                         </div>
                                     )}
                                 </div>
+
                                 <button
                                     className="btn btn-primary"
                                     type="submit"

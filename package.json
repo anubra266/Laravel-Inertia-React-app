@@ -30,7 +30,10 @@
     "dependencies": {
         "@inertiajs/inertia": "^0.1.9",
         "@inertiajs/inertia-react": "^0.1.6",
+        "Dante2": "^0.5.0-rc4",
         "antd": "^4.5.4",
+        "braft-editor": "^2.3.9",
+        "html-react-parser": "^0.14.0",
         "reactstrap": "^8.5.1"
     }
 }
