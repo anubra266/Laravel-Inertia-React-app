@@ -35,7 +35,7 @@ Route::put('/submit', function (Request $request) {
         'first_name' => 'required',
         'last_name' => 'required',
         'email' => 'required',
-        'message' => 'required'
+        'message' => 'required',
     ]);
     return redirect()->back()->with('success', 'Data accepted');
 })->name('submit');

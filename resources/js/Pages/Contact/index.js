@@ -1,35 +1,28 @@
+//* libraries
 import React, { useState, useEffect } from "react";
-
-import { Inertia } from "@inertiajs/inertia";
 import { usePage } from "@inertiajs/inertia-react";
-
+//* Hooks and Helpers
+import { useFlashMessage, useTitle } from "@/Hooks";
+import ContactHelper from "@/Helpers/Contact";
+//* Library Components
+import Form from "antd/lib/form";
+import Input from "antd/lib/input";
+import Button from "antd/lib/button";
+//* Custom components
 import Navbar from "@/Shared/Navbar";
-import FlashMessages from "@/Shared/FlashMessages";
+//* CSS
+import "antd/dist/antd.css";
+
 function Contact() {
-    document.title = "Contact";
-
+    useTitle("Contact");
+    useFlashMessage();
     const { errors } = usePage();
-    const [values, setValues] = useState({
-        first_name: "",
-        last_name: "",
-        email: ""
-    });
+    const [loading, setLoading] = useState(false);
+    const Handle = new ContactHelper(setLoading);
 
-    function handleChange(e) {
-        const key = e.target.id;
-        const value = e.target.value;
-        setValues(values => ({
-            ...values,
-            [key]: value
-        }));
+    function handleSubmit(data) {
+        Handle.submit(data);
     }
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        //*Inertia implements the custom methods
-        Inertia.put("/submit", values);
-    }
-
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -37,66 +30,88 @@ function Contact() {
                     <div className="card">
                         <Navbar />
                         <div className="card-body">
-                            <FlashMessages />
                             <h4>Contact Us! </h4>
-                            <form onSubmit={handleSubmit}>
-                                <div className="form-group">
-                                    <label htmlFor="first_name">
-                                        First name:
-                                    </label>
-                                    <input
-                                        className={`form-control ${errors.first_name &&
-                                            "is-invalid"}`}
-                                        id="first_name"
-                                        value={values.first_name}
-                                        onChange={handleChange}
-                                    />
-                                    {errors.first_name && (
-                                        <div className="invalid-feedback">
-                                            {errors.first_name[0]}
-                                        </div>
-                                    )}
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="last_name">
-                                        Last name:
-                                    </label>
-                                    <input
-                                        className={`form-control ${errors.last_name &&
-                                            "is-invalid"}`}
-                                        id="last_name"
-                                        value={values.last_name}
-                                        onChange={handleChange}
-                                    />
-                                    {errors.last_name && (
-                                        <div className="invalid-feedback">
-                                            {errors.last_name[0]}
-                                        </div>
-                                    )}
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="email">Email:</label>
-                                    <input
-                                        className={`form-control ${errors.email &&
-                                            "is-invalid"}`}
-                                        id="email"
-                                        value={values.email}
-                                        onChange={handleChange}
-                                    />
-                                    {errors.email && (
-                                        <div className="invalid-feedback">
-                                            {errors.email[0]}
-                                        </div>
-                                    )}
-                                </div>
-
-                                <button
-                                    className="btn btn-primary"
-                                    type="submit"
+                            <Form
+                                layout="vertical"
+                                onFinish={handleSubmit}
+                                initialValues={{
+                                    first_name: "Abraham"
+                                }}
+                            >
+                                <Form.Item
+                                    label="First Name"
+                                    name="first_name"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: "Please input First Name!"
+                                        }
+                                    ]}
+                                    validateStatus={
+                                        errors.first_name && "error"
+                                    }
+                                    help={
+                                        errors.first_name &&
+                                        errors.first_name[0]
+                                    }
                                 >
-                                    Submit
-                                </button>
-                            </form>
+                                    <Input placeholder="First Name" />
+                                </Form.Item>
+
+                                <Form.Item
+                                    label="Last Name"
+                                    name="last_name"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: "Please input Last Name!"
+                                        }
+                                    ]}
+                                    validateStatus={errors.last_name && "error"}
+                                    help={
+                                        errors.last_name && errors.last_name[0]
+                                    }
+                                >
+                                    <Input placeholder="Last Name" />
+                                </Form.Item>
+                                <Form.Item
+                                    label="Email"
+                                    name="email"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: "Please input Email!"
+                                        }
+                                    ]}
+                                    validateStatus={errors.email && "error"}
+                                    help={errors.email && errors.email[0]}
+                                >
+                                    <Input type="email" placeholder="Email" />
+                                </Form.Item>
+                                <Form.Item
+                                    label="Message"
+                                    name="message"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: "Please input Message!"
+                                        }
+                                    ]}
+                                    validateStatus={errors.message && "error"}
+                                    help={errors.message && errors.message[0]}
+                                >
+                                    <Input.TextArea placeholder="message" />
+                                </Form.Item>
+                                <Form.Item>
+                                    <Button
+                                        type="primary"
+                                        htmlType="submit"
+                                        loading={loading}
+                                    >
+                                        Submit
+                                    </Button>
+                                </Form.Item>
+                            </Form>
                         </div>
                     </div>
                 </div>

@@ -3,18 +3,15 @@ import "braft-editor/dist/index.css";
 import BraftEditor from "braft-editor";
 const parse = require("html-react-parser");
 import Navbar from "@/Shared/Navbar";
+import { useTitle } from "@/Hooks";
 
 function Blog() {
-    document.title = "Edit Blog";
+    useTitle("Edit Blog");
     const [editorState, setEditorState] = useState(
         BraftEditor.createEditorState("Editor Content")
     );
     const handleBraftChange = editorState => {
         setEditorState(editorState);
-    };
-    const convert_editor = data => {
-        let html = data.toHTML();
-        return html;
     };
 
     return (

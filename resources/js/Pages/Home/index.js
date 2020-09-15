@@ -1,8 +1,9 @@
 import React from "react";
 import Navbar from "@/Shared/Navbar";
+import { useTitle } from "@/Hooks";
 
 function Home() {
-    document.title = "Home";
+    useTitle("Home");
     return (
         <div className="container">
             <div className="row justify-content-center">

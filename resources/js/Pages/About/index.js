@@ -1,8 +1,9 @@
 import React from "react";
 import Navbar from "@/Shared/Navbar";
+import { useTitle } from "@/Hooks";
 
 function About() {
-    document.title = "About";
+    useTitle("About");
 
     return (
         <div className="container">

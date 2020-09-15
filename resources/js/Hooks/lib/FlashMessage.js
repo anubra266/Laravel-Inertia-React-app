@@ -15,10 +15,15 @@ const useFlashMesssage = () => {
         flash.warning && message.warning(flash.warning);
     }, [flash]);
     useEffect(() => {
-        errors &&
-            Object.keys(errors).forEach(err => {
-                message.error(errors[err][0], 3);
-            });
+        Object.keys(errors).length > 0 &&
+            message.error(
+                Object.keys(errors)
+                    .reduce((acc, err) => {
+                        acc.push(`${errors[err][0]} `);
+                        return acc;
+                    }, [])
+                    .join("")
+            );
     }, [errors]);
 };
 export default useFlashMesssage;
