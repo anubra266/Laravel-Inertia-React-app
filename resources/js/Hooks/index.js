@@ -6,4 +6,4 @@ export function useFlashMessage() {
 export { fCap } from "./lib/string";
 export { Asort } from "./lib/array";
 export { useHumanDate, useDbDate, useAntDate } from "./lib/datez";
-export { useTitle } from "./lib/app";
+export { useTitle, useDynamicRefs, useScroll } from "./lib/app";
