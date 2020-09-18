@@ -7,3 +7,11 @@
 export function Asort(a, b, sorter) {
     return a[sorter] === b[sorter] ? 0 : a[sorter] < b[sorter] ? -1 : 1;
 }
+
+/**
+ * Shuffle elements of array
+ * @param {array} array array to shuffle
+ */
+export function useShuffle(array) {
+    return array.sort(() => 0.5 - Math.random());
+}
