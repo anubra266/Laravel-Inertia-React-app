@@ -11,7 +11,7 @@ render(
             <InertiaApp
                 initialPage={JSON.parse(app.dataset.page)}
                 resolveComponent={name =>
-                    import(`./Pages/${name}`).then(module => module.default)
+                    import(`@/Pages/${name}`).then(module => module.default)
                 }
             />
         </React.Fragment>

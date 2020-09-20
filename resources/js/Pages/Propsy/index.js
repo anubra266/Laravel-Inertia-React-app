@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
-import Navbar from "@/Shared/Navbar";
-import { useTitle } from "@/Hooks";
-import Context, { Provider } from "./userstore";
 
-function Propsy() {
+import { useDynamicRefs, useTitle } from "@/Hooks";
+import { Context, Provider } from "./userstore";
+
+import Navbar from "@/Shared/Navbar";
+
+export default function Propsy() {
     useTitle("Propsy");
     const user = { name: "Abraham", age: 19 };
     const store = { user };
@@ -28,8 +30,6 @@ function Propsy() {
         </div>
     );
 }
-
-export default Propsy;
 
 const Child = () => {
     return (
