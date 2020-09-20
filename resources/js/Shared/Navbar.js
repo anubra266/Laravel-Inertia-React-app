@@ -1,11 +1,15 @@
-import React from "react";
-import { useBattery } from "react-use";
+import React, { forwardRef } from "react";
 import { InertiaLink } from "@inertiajs/inertia-react";
 
+import { useExpose } from "@/Hooks";
+
 import routes from "./Routes";
-function Navbar() {
-    //* load battery State
-    const batteryState = useBattery();
+
+function Navbar({}, ref) {
+    const nav_func = () => {
+        alert("function in Navbar");
+    };
+    useExpose(ref, { nav_func });
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <a className="navbar-brand" href="#">
@@ -40,13 +44,10 @@ function Navbar() {
                         );
                     })}
                 </ul>
-                <span className="text-info navbar-text">
-                    {(batteryState.level * 100).toFixed(0)}%{" "}
-                    {batteryState.charging ? "Charging" : ""}
-                </span>
+                <span className="text-info navbar-text">Wow</span>
             </div>
         </nav>
     );
 }
 
-export default Navbar;
+export default forwardRef(Navbar);

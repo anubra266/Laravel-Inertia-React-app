@@ -43,6 +43,9 @@ Route::put('/submit', function (Request $request) {
 Route::get('/blog', function () {
     return Inertia::render('Blog');
 })->name('blog');
+Route::get('/propsy', function () {
+    return Inertia::render('Propsy');
+})->name('propsy');
 
 // Auth::routes();
 

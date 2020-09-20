@@ -17,6 +17,10 @@ export default {
             {
                 name: "Edit Blog",
                 route: "blog"
+            },
+            {
+                name: "Propsy",
+                route: "propsy"
             }
         ]
     }

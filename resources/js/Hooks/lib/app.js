@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useImperativeHandle } from "react";
 
 export function useTitle(title) {
     return (document.title = title);
@@ -10,6 +10,12 @@ export function useDynamicRefs(list) {
         return acc;
     });
 }
+
+export const useExpose = (ref, functions) => {
+    return useImperativeHandle(ref, () => {
+        return { ...functions };
+    });
+};
 
 export function useScroll(ref) {
     ref.current.scrollIntoView({
