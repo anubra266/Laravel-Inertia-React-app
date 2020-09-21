@@ -1,4 +1,5 @@
-import React, { useImperativeHandle } from "react";
+import React, { useEffect, useImperativeHandle } from "react";
+import { Inertia } from "@inertiajs/inertia";
 
 export function useTitle(title) {
     return (document.title = title);
@@ -23,3 +24,15 @@ export function useScroll(ref) {
         block: "start"
     });
 }
+
+export const useSmoothRefresh = refreshTime => {
+    const refresh = () => {
+        Inertia.reload();
+    };
+    useEffect(() => {
+        const refresher = setInterval(refresh, refreshTime);
+        return () => {
+            clearInterval(refresher);
+        };
+    }, []);
+};

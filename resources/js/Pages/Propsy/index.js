@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { useDynamicRefs, useTitle } from "@/Hooks";
+import { useTitle } from "@/Hooks";
 import { Context, Provider } from "./userstore";
 
 import Navbar from "@/Shared/Navbar";
