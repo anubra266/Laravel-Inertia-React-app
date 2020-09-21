@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::fallback(function () {
+    //Custom 404 page
+    dd('404 Error❗ God knows what you\'re looking for😠');
+});
 Route::get('/', function () {
     return Inertia::render('Home', [
         'users' => ''
