@@ -9,7 +9,10 @@ function Navbar({}, ref) {
     const nav_func = () => {
         alert("function in Navbar");
     };
-    useExpose(ref, { nav_func });
+    const nav_func2 = () => {
+        alert("function 2 in Navbar");
+    };
+    useExpose(ref, { nav_func, nav_func2 });
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <a className="navbar-brand" href="#">

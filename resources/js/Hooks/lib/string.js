@@ -2,6 +2,6 @@
  * Capitalize first character in string
  * @param {string} string string to format
  */
-export function fCap(string) {
+export function useFCap(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
