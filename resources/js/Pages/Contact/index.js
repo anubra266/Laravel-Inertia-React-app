@@ -12,7 +12,6 @@ import Button from "antd/lib/button";
 import Navbar from "@/Shared/Navbar";
 //* CSS
 import "antd/dist/antd.css";
-import { generateThemeColor, changeAntdTheme } from "dynamic-antd-theme";
 function Contact() {
     useTitle("Contact");
     useFlashMessage();
@@ -23,8 +22,7 @@ function Contact() {
     function handleSubmit(data) {
         Handle.submit(data);
     }
-    //? Dynamic theme changing
-    changeAntdTheme(generateThemeColor("purple"));
+
     return (
         <div className="container">
             <div className="row justify-content-center">

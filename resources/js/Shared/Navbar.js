@@ -4,6 +4,10 @@ import { InertiaLink } from "@inertiajs/inertia-react";
 import { useExpose } from "@/Hooks";
 
 import routes from "./Routes";
+import DynamicAntdTheme, {
+    generateThemeColor,
+    changeAntdTheme
+} from "dynamic-antd-theme";
 
 function Navbar({}, ref) {
     const nav_func = () => {
@@ -13,6 +17,10 @@ function Navbar({}, ref) {
         alert("function 2 in Navbar");
     };
     useExpose(ref, { nav_func, nav_func2 });
+
+    //? Dynamic theme changing
+    changeAntdTheme(generateThemeColor("purple"));
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <a className="navbar-brand" href="#">
@@ -46,6 +54,9 @@ function Navbar({}, ref) {
                             </li>
                         );
                     })}
+                    <li>
+                        <DynamicAntdTheme primaryColor="#77dd66" />
+                    </li>
                 </ul>
                 <span className="text-info navbar-text">Wow</span>
             </div>
