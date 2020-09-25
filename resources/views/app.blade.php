@@ -16,6 +16,7 @@
     @routes
 </head>
 
+
 <body>
     <!--Call the Inertia app here like
         <div id="root"></div>

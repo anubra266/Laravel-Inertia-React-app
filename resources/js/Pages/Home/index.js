@@ -14,7 +14,7 @@ function Home() {
     //? Seems the callback must be defined before the hook if cb is defined as const
     function updateHeight(node) {
         setHeight(node.getBoundingClientRect().height);
-    }
+    } 
     return (
         <div className="container">
             <div className="row justify-content-center">
