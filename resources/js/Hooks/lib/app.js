@@ -8,6 +8,13 @@ import { Inertia } from "@inertiajs/inertia";
 export function useTitle(title) {
     return (document.title = title);
 }
+/**
+ * Sets Title for Page
+ * @param {string} title Page Title
+ */
+export function useTheme(theme) {
+    window.less.modifyVars({ ...theme });
+}
 
 /**
  * Set Ref for an Element or Component

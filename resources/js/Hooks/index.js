@@ -7,6 +7,7 @@ export {
     useDynamicRefs,
     useExpose,
     useTitle,
+    useTheme,
     useScroll,
     useSmoothRefresh
 } from "./lib/app";

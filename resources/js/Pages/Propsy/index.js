@@ -1,33 +1,27 @@
 import React, { useContext } from "react";
 
 import { useTitle } from "@/Hooks";
+import Site from "@/Shared/layout";
+import Card from "antd/lib/card";
 import { Context, Provider } from "./userstore";
-
-import Navbar from "@/Shared/Navbar";
 
 export default function Propsy() {
     useTitle("Propsy");
     const user = { name: "Abraham", age: 19 };
     const store = { user };
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <Navbar />
-                        <div className=" border card-body">
-                            I'm an Propsy component, trying to avoid Prop
-                            Drilling.
-                            <br />
-                            He's {user.name}, aged {user.age}
-                            <Provider value={store}>
-                                <Child />
-                            </Provider>
-                        </div>
-                    </div>
+        <Site>
+            <Card>
+                <div className="border">
+                    I'm an Propsy component, trying to avoid Prop Drilling.
+                    <br />
+                    He's {user.name}, aged {user.age}
+                    <Provider value={store}>
+                        <Child />
+                    </Provider>
                 </div>
-            </div>
-        </div>
+            </Card>
+        </Site>
     );
 }
 
