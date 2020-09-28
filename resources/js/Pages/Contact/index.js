@@ -8,6 +8,7 @@ import ContactHelper from "@/Helpers/Contact";
 import Form from "antd/lib/form";
 import Input from "antd/lib/input";
 import Button from "antd/lib/button";
+import Card from "antd/lib/card";
 //* Custom components
 import Navbar from "@/Shared/Navbar";
 //* CSS
@@ -29,6 +30,7 @@ function Contact() {
         });
     };
 
+    window.less.modifyVars({ "@primary-color": "#000" });
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -44,87 +46,101 @@ function Contact() {
                             >
                                 Change{" "}
                             </Button>
-                            <Form
-                                layout="vertical"
-                                onFinish={handleSubmit}
-                                initialValues={{
-                                    first_name: "Abraham"
-                                }}
-                            >
-                                <Form.Item
-                                    label="First Name"
-                                    name="first_name"
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: "Please input First Name!"
-                                        }
-                                    ]}
-                                    validateStatus={
-                                        errors.first_name && "error"
-                                    }
-                                    help={
-                                        errors.first_name &&
-                                        errors.first_name[0]
-                                    }
+                            <Card>
+                                <Form
+                                    layout="vertical"
+                                    onFinish={handleSubmit}
+                                    initialValues={{
+                                        first_name: "Abraham"
+                                    }}
                                 >
-                                    <Input placeholder="First Name" />
-                                </Form.Item>
-
-                                <Form.Item
-                                    label="Last Name"
-                                    name="last_name"
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: "Please input Last Name!"
+                                    <Form.Item
+                                        label="First Name"
+                                        name="first_name"
+                                        rules={[
+                                            {
+                                                required: true,
+                                                message:
+                                                    "Please input First Name!"
+                                            }
+                                        ]}
+                                        validateStatus={
+                                            errors.first_name && "error"
                                         }
-                                    ]}
-                                    validateStatus={errors.last_name && "error"}
-                                    help={
-                                        errors.last_name && errors.last_name[0]
-                                    }
-                                >
-                                    <Input placeholder="Last Name" />
-                                </Form.Item>
-                                <Form.Item
-                                    label="Email"
-                                    name="email"
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: "Please input Email!"
+                                        help={
+                                            errors.first_name &&
+                                            errors.first_name[0]
                                         }
-                                    ]}
-                                    validateStatus={errors.email && "error"}
-                                    help={errors.email && errors.email[0]}
-                                >
-                                    <Input type="email" placeholder="Email" />
-                                </Form.Item>
-                                <Form.Item
-                                    label="Message"
-                                    name="message"
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: "Please input Message!"
-                                        }
-                                    ]}
-                                    validateStatus={errors.message && "error"}
-                                    help={errors.message && errors.message[0]}
-                                >
-                                    <Input.TextArea placeholder="message" />
-                                </Form.Item>
-                                <Form.Item>
-                                    <Button
-                                        type="primary"
-                                        htmlType="submit"
-                                        loading={loading}
                                     >
-                                        Submit
-                                    </Button>
-                                </Form.Item>
-                            </Form>
+                                        <Input placeholder="First Name" />
+                                    </Form.Item>
+
+                                    <Form.Item
+                                        label="Last Name"
+                                        name="last_name"
+                                        rules={[
+                                            {
+                                                required: true,
+                                                message:
+                                                    "Please input Last Name!"
+                                            }
+                                        ]}
+                                        validateStatus={
+                                            errors.last_name && "error"
+                                        }
+                                        help={
+                                            errors.last_name &&
+                                            errors.last_name[0]
+                                        }
+                                    >
+                                        <Input placeholder="Last Name" />
+                                    </Form.Item>
+                                    <Form.Item
+                                        label="Email"
+                                        name="email"
+                                        rules={[
+                                            {
+                                                required: true,
+                                                message: "Please input Email!"
+                                            }
+                                        ]}
+                                        validateStatus={errors.email && "error"}
+                                        help={errors.email && errors.email[0]}
+                                    >
+                                        <Input
+                                            type="email"
+                                            placeholder="Email"
+                                        />
+                                    </Form.Item>
+                                    <Form.Item
+                                        label="Message"
+                                        name="message"
+                                        rules={[
+                                            {
+                                                required: true,
+                                                message: "Please input Message!"
+                                            }
+                                        ]}
+                                        validateStatus={
+                                            errors.message && "error"
+                                        }
+                                        help={
+                                            errors.message && errors.message[0]
+                                        }
+                                    >
+                                        <Input.TextArea placeholder="message" />
+                                    </Form.Item>
+                                    <Form.Item>
+                                        <Button
+                                            type="primary"
+                                            htmlType="submit"
+                                            loading={loading}
+                                        >
+                                            Submit
+                                        </Button>
+                                    </Form.Item>
+                                </Form>
+                            </Card>
                         </div>
                     </div>
                 </div>

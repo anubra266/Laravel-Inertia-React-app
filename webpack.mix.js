@@ -1,6 +1,6 @@
 const mix = require("laravel-mix");
 const path = require("path");
-const { getThemeVariables } = require("antd/dist/theme");
+// const { getThemeVariables } = require("antd/dist/theme");
 
 const AntDesignThemePlugin = require("antd-theme-webpack-plugin");
 const options = {
