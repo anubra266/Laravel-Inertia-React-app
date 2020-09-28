@@ -23,6 +23,14 @@
         in normal create-react-app
     -->
     @inertia
+<link rel="stylesheet/less" type="text/css" href="color.less" />
+    <script>
+        window.less = {
+        async: true,
+        env: 'production'
+      };
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
 </body>
 
 </html>

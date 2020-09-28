@@ -23,6 +23,12 @@ function Contact() {
         Handle.submit(data);
     }
 
+    const changeColor = (variableName, colorCode) => {
+        window.less.modifyVars({
+            [`@${variableName}`]: colorCode
+        });
+    };
+
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -31,6 +37,13 @@ function Contact() {
                         <Navbar />
                         <div className="card-body">
                             <h4>Contact Us! </h4>
+                            <Button
+                                onClick={() =>
+                                    changeColor("primary-color", "purple")
+                                }
+                            >
+                                Change{" "}
+                            </Button>
                             <Form
                                 layout="vertical"
                                 onFinish={handleSubmit}
