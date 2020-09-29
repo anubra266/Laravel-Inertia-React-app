@@ -1,4 +1,7 @@
 import React from "react";
+import Result from "antd/lib/result";
+import Button from "antd/lib/button";
+import { InertiaLink } from "@inertiajs/inertia-react";
 
 export default function ErrorPage({ status }) {
     const title = {
@@ -12,13 +15,21 @@ export default function ErrorPage({ status }) {
         503: "Sorry, we are doing some maintenance. Please check back soon.",
         500: "Whoops, something went wrong on our servers.",
         404: "Sorry, the page you are looking for could not be found.",
-        403: "Sorry, you are forbidden from accessing this page."
+        403: "Sorry, you are not authorized to access this page."
     }[status];
 
     return (
         <div>
-            <h1>{title}</h1>
-            <div>{description}</div>
+            <Result
+                status={status}
+                title={title}
+                subTitle={description}
+                extra={
+                    <Button type="primary">
+                        <InertiaLink href={route("home")}>Go Home</InertiaLink>
+                    </Button>
+                }
+            />
         </div>
     );
 }
