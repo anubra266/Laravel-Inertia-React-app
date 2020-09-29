@@ -4,6 +4,7 @@ import Site from "@/Shared/layout";
 import Card from "antd/lib/card";
 import Button from "antd/lib/button";
 import Space from "antd/lib/space";
+import { BsFillHouseFill } from "react-icons/bs";
 
 function Home() {
     useTitle("Home");
@@ -23,7 +24,7 @@ function Home() {
             <Card>
                 <div ref={home}>
                     I'm the Home component! of height {Math.round(height)}px{" "}
-                    <br />
+                    <BsFillHouseFill /> <br />
                     <Space>
                         <Button
                             type="primary"
