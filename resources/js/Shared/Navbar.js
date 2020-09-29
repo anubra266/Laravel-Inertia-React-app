@@ -6,9 +6,6 @@ import Menu from "antd/lib/menu";
 import routes from "./Routes";
 import { useTheme } from "@/Hooks";
 
-import darkTheme from "@/AntD/dark.json";
-import lightTheme from "@/AntD/light.json";
-
 function Navbar() {
     return (
         <Layout.Header className="header">
@@ -25,7 +22,9 @@ function Navbar() {
                 })}
                 <Menu.Item>
                     <span
-                        onClick={() => useTheme({...darkTheme})}
+                        onClick={() =>
+                            useTheme("dark")
+                        }
                     >
                         Change Theme
                     </span>

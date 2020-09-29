@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useImperativeHandle, useRef } from "react";
 import { Inertia } from "@inertiajs/inertia";
+import darkTheme from "@/AntD/dark.json";
+import lightTheme from "@/AntD/light.json";
+import defTheme from "@/AntD/theme.json";
 
 /**
  * Sets Title for Page
@@ -9,11 +12,17 @@ export function useTitle(title) {
     return (document.title = title);
 }
 /**
- * Sets Title for Page
- * @param {string} title Page Title
+ * Sets App theme
+ * @param {string} theme Light or dark theme
+ * @param {object} extra additional theme variables
  */
-export function useTheme(theme) {
-    window.less.modifyVars({ ...theme });
+export function useTheme(theme, extra = {}) {
+    theme = theme
+        ? theme === "light"
+            ? { ...lightTheme, ...defTheme }
+            : { ...darkTheme, "@primary-color": defTheme["@primary-color"] }
+        : {};
+    window.less.modifyVars({ ...theme, ...extra });
 }
 
 /**

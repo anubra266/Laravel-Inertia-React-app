@@ -4,20 +4,18 @@ import "antd/dist/antd.css";
 import Layout from "antd/lib/layout";
 
 import Navbar from "@/Shared/Navbar";
- 
-import { useExpose } from "@/Hooks";
 
-
+import { useExpose, useTheme } from "@/Hooks";
 
 const layout = ({ children }, ref) => {
     const lay_func = () => {
-        alert("function in Layout"); 
+        alert("function in Layout");
     };
     const lay_func2 = () => {
         alert("function 2 in Layout");
     };
     useExpose(ref, { lay_func, lay_func2 });
-   
+
     return (
         <Layout>
             <Navbar />

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Navbar from "@/Shared/Navbar";
 import { useTitle, useDualRef } from "@/Hooks";
 import Site from "@/Shared/layout";
 import Card from "antd/lib/card";
+import Button from "antd/lib/button";
+import Space from "antd/lib/space";
 
 function Home() {
     useTitle("Home");
@@ -23,12 +24,20 @@ function Home() {
                 <div ref={home}>
                     I'm the Home component! of height {Math.round(height)}px{" "}
                     <br />
-                    <button onClick={() => lay.current.lay_func()}>
-                        Run Function in Layout
-                    </button>
-                    <button onClick={() => lay.current.lay_func2()}>
-                        Run Function 2 in Layout
-                    </button>
+                    <Space>
+                        <Button
+                            type="primary"
+                            onClick={() => lay.current.lay_func()}
+                        >
+                            Run Function in Layout
+                        </Button>
+                        <Button
+                            type="primary"
+                            onClick={() => lay.current.lay_func2()}
+                        >
+                            Run Function 2 in Layout
+                        </Button>
+                    </Space>
                 </div>
             </Card>
         </Site>
