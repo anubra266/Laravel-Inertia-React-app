@@ -24,21 +24,20 @@ This is my Inertia boilerplate for future projects with React. So it is Inertia-
 
 ## How do I set this up
 
-```
-git clone https://github.com/anubra266/Inertia-App.git myappname
+> git clone https://github.com/anubra266/Inertia-App.git myappname
 
-composer install
+> composer install
 
-npm install
+> npm install
 
-npm run dev
+> npm run dev
 
-cp .env.example .env
+> cp .env.example .env
 
-php artisan key:generate
+> php artisan key:generate
 
-php artisan ziggy:generate
-```
+> php artisan ziggy:generate
+
 ### Apps started with this Template
 * [at-School](https://at-school.xyz)
 
