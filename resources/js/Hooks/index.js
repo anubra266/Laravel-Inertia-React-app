@@ -1,4 +1,4 @@
-export { useFCap } from "./lib/string";
+export { useFCap, usePlural } from "./lib/string";
 export { useAsort, useShuffle } from "./lib/array";
 export { useFlashMessage } from "./lib/FlashMessage";
 export { useAntDate, useDbDate, useHumanDate } from "./lib/datez";

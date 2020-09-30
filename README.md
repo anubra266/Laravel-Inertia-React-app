@@ -9,7 +9,18 @@ Inertia.js lets you quickly build modern single-page React, Vue and Svelte apps 
 This is my Inertia boilerplate for future projects with React. So it is Inertia-React not Inertia-Vue.
 
 ## Notable Packages
-
+* [Laravel](https://laravel.com) - Backend 🎰
+* [ReactJs](https://reactjs.com) - Frontend 💻
+* [InertiaJs](https://inertiajs.com) - Mediator(Helps discard API) 🧑‍🦯
+* [Ant Design](https://ant.design) - Best Collection of React UI Components 🏝️
+* [React-icons](https://react-icons.github.io) - Large Collection of Icons 💣
+* [Ziggy](https://github.com/tighten/ziggy) - Transition Backend Routes to React 🌌
+* [Ant Design Theme Plugin](https://github.com/mzohaibqc/antd-theme-webpack-plugin) - Customize Ant Design Theme 💱
+* [Ant Design Theme Generator](https://github.com/mzohaibqc/antd-theme-generator) - Generate Less Variables for Live Dyamic Theming 🚉
+* [React Use](https://github.com/streamich/react-use) - Unlimited supply of React Hooks ✍️
+* [HTML-React Parser](https://www.npmjs.com/package/html-react-parser) - Transform HTML code into JSX for Rendering 
+* [Braft Editor](https://braft.margox.cn/) - Meets all User Text Editing Needs
+* [Dante2](https://michelson.github.io/dante2/#/src-index) - Blog Editor Mode
 
 ## How do I set this up
 
@@ -28,5 +39,9 @@ php artisan key:generate
 
 php artisan ziggy:generate
 ```
-**I'm not dumb, the above is all self explanatory.**
+### Apps started with this Template
+* [at-School](https://at-school.xyz)
+
+
+**If you use this Template, please reach out, so I can list your app here😃**
 
