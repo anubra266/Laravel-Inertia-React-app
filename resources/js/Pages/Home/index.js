@@ -18,7 +18,7 @@ function Home() {
     //? Seems the callback must be defined before the hook if cb is defined as const
     function updateHeight(node) {
         setHeight(node.getBoundingClientRect().height);
-    }   
+    }     
     return (
         <Site ref={layout}>
             <Card>

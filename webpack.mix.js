@@ -1,6 +1,7 @@
 const mix = require("laravel-mix");
 const path = require("path");
 const fs = require("fs");
+const { getThemeVariables } = require("antd/dist/theme");
 
 const { getLessVars } = require("antd-theme-generator");
 
@@ -48,6 +49,18 @@ mix.react("resources/js/app.js", "public/js")
                 "@": path.resolve("resources/js")
             }
         },
+        module: {
+            rules: [
+                {
+                    test: /\.(?:le|c)ss$/,
+                    use: [
+                        {
+                            loader: require.resolve("less-loader"),
+                        }
+                    ]
+                }
+            ]
+        }
     })
     //* version the bundles
     .version()

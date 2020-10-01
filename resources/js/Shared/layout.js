@@ -5,7 +5,7 @@ import Layout from "antd/lib/layout";
 
 import Navbar from "@/Shared/Navbar";
 
-import { useExpose, useTheme } from "@/Hooks";
+import { useExpose } from "@/Hooks";
 
 const layout = ({ children }, ref) => {
     const lay_func = () => {
@@ -13,7 +13,7 @@ const layout = ({ children }, ref) => {
     };
     const lay_func2 = () => {
         alert("function 2 in Layout");
-    }; 
+    };
     useExpose(ref, { lay_func, lay_func2 });
 
     return (
