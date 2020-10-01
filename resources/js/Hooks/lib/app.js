@@ -15,14 +15,17 @@ export function useTitle(title) {
  * Sets App theme
  * @param {string} theme Light or dark theme
  * @param {object} extra additional theme variables
+ * @param {object} cm callback after theme change
  */
-export function useTheme(theme, extra = {}) {
-    theme = theme
+export function useTheme(theme, extra = {}, cb) {
+    const vars = theme
         ? theme === "light"
             ? { ...lightTheme, ...defTheme }
-            : { ...darkTheme, "@primary-color": defTheme["@primary-color"] }
+            : { ...darkTheme }
         : {};
-    window.less.modifyVars({ ...theme, ...extra });
+    window.less.modifyVars({ ...vars, ...extra }).then(() => {
+        cb && cb();
+    });
 }
 
 /**

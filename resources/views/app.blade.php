@@ -50,7 +50,7 @@
         env: 'production'
       };
     </script>
-    <script type="text/javascript" src="{{asset('less.js')}}"></script>
+    <script type="text/javascript" src="less.js"></script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@ const layout = ({ children }, ref) => {
     };
     const lay_func2 = () => {
         alert("function 2 in Layout");
-    };
+    }; 
     useExpose(ref, { lay_func, lay_func2 });
 
     return (

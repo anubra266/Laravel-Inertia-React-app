@@ -4,7 +4,9 @@
 /public/hot
 /public/mix-manifest.json
 /public/storage
+/public/color.less
 /storage/*.key
+/resources/js/AntD/*.json
 /vendor
 .env
 .phpunit.result.cache

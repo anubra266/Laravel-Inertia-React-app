@@ -21,13 +21,10 @@ function Navbar() {
                     );
                 })}
                 <Menu.Item>
-                    <span
-                        onClick={() =>
-                            useTheme("dark")
-                        }
-                    >
-                        Change Theme
-                    </span>
+                    <span onClick={() => useTheme("dark")}>Dark Theme</span>
+                </Menu.Item>
+                <Menu.Item>
+                    <span onClick={() => useTheme("light")}>Light Theme</span>
                 </Menu.Item>
             </Menu>
         </Layout.Header>
