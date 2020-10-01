@@ -56,6 +56,11 @@ mix.react("resources/js/app.js", "public/js")
                     use: [
                         {
                             loader: require.resolve("less-loader"),
+                            options: {
+                                lessOptions: {
+                                    javascriptEnabled: true
+                                }
+                            }
                         }
                     ]
                 }
