@@ -10,10 +10,10 @@ export function useFCap(string) {
  * Pluralise a collection where it applies
  * @param {array} array Collection to be described
  * @param {string} adjective String that describes List
+ * @param {string} suffix String to append to plural
  */
-export function usePlural(array, adjective) {
+export function usePlural(array, adjective, suffix) {
     const isPlural = array.length !== 1;
-    const lastLetter = adjective.charAt(adjective.length - 1);
-    const suffix = isPlural ? (lastLetter === "s" ? "'" : "s") : "";
+    suffix = isPlural ? suffix : "";
     return `${array.length} ${adjective}${suffix}`;
 }
