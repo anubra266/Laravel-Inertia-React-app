@@ -54,7 +54,12 @@ export const useExpose = (ref, instances) => {
  * @param {string} component Name of Component Module
  * @param {string} suffix Suffix to Component Name
  */
-const useFluidComponent = (props, relative_path = "./", component, suffix) => {
+export const useFluidComponent = (
+    props,
+    relative_path = "./",
+    component,
+    suffix
+) => {
     const Component = React.createFactory(
         require(`${relative_path}${component}${suffix}`).default
     );
