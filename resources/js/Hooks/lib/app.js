@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useImperativeHandle, useRef } from "react";
+import {
+    useCallback,
+    useEffect,
+    useImperativeHandle,
+    useRef,
+    createFactory
+} from "react";
 import { Inertia } from "@inertiajs/inertia";
 import darkTheme from "@/AntD/dark.json";
 import lightTheme from "@/AntD/light.json";
@@ -45,25 +51,6 @@ export const useExpose = (ref, instances) => {
     return useImperativeHandle(ref, () => {
         return { ...instances };
     });
-};
-
-/**
- * Creates Dynamic React Components
- * @param {object} props Properties to be passed to resulting component
- * @param {string} relative_path Path to Component Module
- * @param {string} component Name of Component Module
- * @param {string} suffix Suffix to Component Name
- */
-export const useFluidComponent = (
-    props,
-    relative_path = "./",
-    component,
-    suffix
-) => {
-    const Component = React.createFactory(
-        require(`${relative_path}${component}${suffix}`).default
-    );
-    return <Component {...props} />;
 };
 
 /**
