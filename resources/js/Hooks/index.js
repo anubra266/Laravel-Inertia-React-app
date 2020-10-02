@@ -6,6 +6,7 @@ export {
     useDualRef,
     useDynamicRefs,
     useExpose,
+    useFluidComponent,
     useTitle,
     useTheme,
     useScroll,

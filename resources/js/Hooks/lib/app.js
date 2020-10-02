@@ -5,30 +5,6 @@ import lightTheme from "@/AntD/light.json";
 import defTheme from "@/AntD/theme.json";
 
 /**
- * Sets Title for Page
- * @param {string} title Page Title
- */
-export function useTitle(title) {
-    return (document.title = title);
-}
-/**
- * Sets App theme
- * @param {string} theme Light or dark theme
- * @param {object} extra additional theme variables
- * @param {object} cm callback after theme change
- */
-export function useTheme(theme, extra = {}, cb) {
-    const vars = theme
-        ? theme === "light"
-            ? { ...lightTheme, ...defTheme }
-            : { ...darkTheme }
-        : {};
-    window.less.modifyVars({ ...vars, ...extra }).then(() => {
-        cb && cb();
-    });
-}
-
-/**
  * Set Ref for an Element or Component
  * @param {boolean} cbonly indicates whether to return just callbackref
  * @param {function} callback Function to execute on Node Render (optional)
@@ -72,6 +48,20 @@ export const useExpose = (ref, instances) => {
 };
 
 /**
+ * Creates Dynamic React Components
+ * @param {object} props Properties to be passed to resulting component
+ * @param {string} relative_path Path to Component Module
+ * @param {string} component Name of Component Module
+ * @param {string} suffix Suffix to Component Name
+ */
+const useFluidComponent = (props, relative_path = "./", component, suffix) => {
+    const Component = React.createFactory(
+        require(`${relative_path}${component}${suffix}`).default
+    );
+    return <Component {...props} />;
+};
+
+/**
  * Scroll to an element
  * @param {object} ref Element to scroll to
  */
@@ -97,3 +87,28 @@ export const useSmoothRefresh = refreshTime => {
         };
     }, []);
 };
+
+/**
+ * Sets App theme
+ * @param {string} theme Light or dark theme
+ * @param {object} extra additional theme variables
+ * @param {object} cm callback after theme change
+ */
+export function useTheme(theme, extra = {}, cb) {
+    const vars = theme
+        ? theme === "light"
+            ? { ...lightTheme, ...defTheme }
+            : { ...darkTheme }
+        : {};
+    window.less.modifyVars({ ...vars, ...extra }).then(() => {
+        cb && cb();
+    });
+}
+
+/**
+ * Sets Title for Page
+ * @param {string} title Page Title
+ */
+export function useTitle(title) {
+    return (document.title = title);
+}
