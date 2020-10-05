@@ -1,7 +1,6 @@
 const mix = require("laravel-mix");
 const path = require("path");
 const fs = require("fs");
-const { getThemeVariables } = require("antd/dist/theme");
 
 const { getLessVars } = require("antd-theme-generator");
 

@@ -5,5 +5,5 @@
             "@/*": ["./resources/js/*"]
         }
     },
-    "exclude": ["node_modules", "vendor", "storage"]
+    "exclude": ["**/node_modules/*", "**/vendor/*", "**/public/*"]
 }

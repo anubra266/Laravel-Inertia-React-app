@@ -24,7 +24,7 @@ Route::get('/', function () {
     return Inertia::render('Home', [
         'users' => ''
     ]);
-})->name('home');
+})->name('home'); 
 
 Route::get('/about', function () {
     return Inertia::render('About');
