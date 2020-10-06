@@ -11,6 +11,7 @@
     },
     "devDependencies": {
         "@babel/preset-react": "^7.0.0",
+        "@inertiajs/progress": "^0.1.2",
         "antd-theme-generator": "^1.2.4",
         "axios": "^0.19",
         "bootstrap": "^4.0.0",
