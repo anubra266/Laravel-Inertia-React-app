@@ -9,7 +9,7 @@ import { useExpose } from "@/Hooks";
 
 const layout = ({ children }, ref) => {
     const lay_func = () => {
-        alert("function in Layout"); 
+        alert("function in Layout");
     };
     const lay_func2 = () => {
         alert("function 2 in Layout");
@@ -26,7 +26,6 @@ const layout = ({ children }, ref) => {
                         style={{
                             padding: 24,
                             margin: 0,
-                            minHeight: 280
                         }}
                     >
                         {children}
