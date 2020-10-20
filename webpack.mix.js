@@ -68,5 +68,5 @@ mix.react("resources/js/app.js", "public/js")
     })
     //* version the bundles
     .version()
-    .browserSync("localhost:8000")
+    // .browserSync("localhost:8000")
     .disableNotifications();
