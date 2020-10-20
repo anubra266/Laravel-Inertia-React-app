@@ -9,10 +9,9 @@ const FlashMessage = () => {
         maxCount: 1
     });
     useEffect(() => {
-        flash.success && message.success(flash.success);
-        flash.error && message.error(flash.error);
-        flash.info && message.info(flash.info);
-        flash.warning && message.warning(flash.warning);
+        Object.keys(flash).forEach(status => {
+            flash[status] && message[status](flash[status]);
+        });
     }, [flash]);
     useEffect(() => {
         Object.keys(errors).length > 0 &&
@@ -33,5 +32,3 @@ const FlashMessage = () => {
 export const useFlashMessage = () => {
     return FlashMessage();
 };
-
-

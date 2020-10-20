@@ -115,10 +115,9 @@ var FlashMessage = function FlashMessage() {
     maxCount: 1
   });
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    flash.success && antd_lib_message__WEBPACK_IMPORTED_MODULE_2___default.a.success(flash.success);
-    flash.error && antd_lib_message__WEBPACK_IMPORTED_MODULE_2___default.a.error(flash.error);
-    flash.info && antd_lib_message__WEBPACK_IMPORTED_MODULE_2___default.a.info(flash.info);
-    flash.warning && antd_lib_message__WEBPACK_IMPORTED_MODULE_2___default.a.warning(flash.warning);
+    Object.keys(flash).forEach(function (status) {
+      flash[status] && antd_lib_message__WEBPACK_IMPORTED_MODULE_2___default.a[status](flash[status]);
+    });
   }, [flash]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     Object.keys(errors).length > 0 && antd_lib_message__WEBPACK_IMPORTED_MODULE_2___default.a.error(Object.keys(errors).reduce(function (acc, err) {
