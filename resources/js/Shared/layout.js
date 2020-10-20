@@ -5,9 +5,10 @@ import Layout from "antd/lib/layout";
 
 import Navbar from "@/Shared/Navbar";
 
-import { useExpose } from "@/Hooks";
+import { useExpose, useFlashMessage } from "@/Hooks";
 
 const layout = ({ children }, ref) => {
+    useFlashMessage();
     const lay_func = () => {
         alert("function in Layout");
     };
@@ -25,7 +26,7 @@ const layout = ({ children }, ref) => {
                         className="site-layout-background"
                         style={{
                             padding: 24,
-                            margin: 0,
+                            margin: 0
                         }}
                     >
                         {children}

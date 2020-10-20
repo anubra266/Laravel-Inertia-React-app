@@ -19,8 +19,8 @@ function Home() {
     function updateHeight(node) {
         setHeight(node.getBoundingClientRect().height);
     }
-    return (
-        <Site ref={layout}> 
+    return ( 
+        <Site ref={layout}>
             <Card>
                 <div ref={home}>
                     I'm the Home component! of height {Math.round(height)}px{" "}

@@ -517,6 +517,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var layout = function layout(_ref, ref) {
   var children = _ref.children;
+  Object(_Hooks__WEBPACK_IMPORTED_MODULE_4__["useFlashMessage"])();
 
   var lay_func = function lay_func() {
     alert("function in Layout");
