@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 //TODO Delete supposed generated files in remote (js)
 Route::get('/', function () {
-    return Inertia::render('Home', [
+return Inertia::render('Home', [
         'users' => ''
     ]);
 })->name('home');

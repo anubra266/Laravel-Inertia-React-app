@@ -410,8 +410,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd_lib_layout__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd_lib_layout__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var antd_lib_menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd/lib/menu */ "./node_modules/antd/lib/menu/index.js");
 /* harmony import */ var antd_lib_menu__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd_lib_menu__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Routes */ "./resources/js/Shared/Routes.js");
-/* harmony import */ var _Hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Hooks */ "./resources/js/Hooks/index.js");
+/* harmony import */ var antd_lib_message__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd/lib/message */ "./node_modules/antd/lib/message/index.js");
+/* harmony import */ var antd_lib_message__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(antd_lib_message__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Routes */ "./resources/js/Shared/Routes.js");
+/* harmony import */ var _Hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Hooks */ "./resources/js/Hooks/index.js");
+
 
 
 
@@ -422,13 +425,25 @@ __webpack_require__.r(__webpack_exports__);
 function Navbar() {
   var getUrl = function getUrl() {
     var location = window.location.href;
-    var present_route = _Routes__WEBPACK_IMPORTED_MODULE_4__["default"].general.routes.find(function (r) {
+    var present_route = _Routes__WEBPACK_IMPORTED_MODULE_5__["default"].general.routes.find(function (r) {
       return route(r.route).template === location;
     });
     return ["menu-".concat(present_route.route)];
   };
 
   var url = getUrl();
+
+  var applyTheme = function applyTheme(_ref) {
+    var theme = _ref.key;
+    antd_lib_message__WEBPACK_IMPORTED_MODULE_4___default.a.loading({
+      key: 1,
+      content: "Applying Theme"
+    });
+    Object(_Hooks__WEBPACK_IMPORTED_MODULE_6__["useTheme"])(theme, {}, function () {
+      antd_lib_message__WEBPACK_IMPORTED_MODULE_4___default.a.destroy(1);
+    });
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd_lib_layout__WEBPACK_IMPORTED_MODULE_2___default.a.Header, {
     className: "header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -437,21 +452,19 @@ function Navbar() {
     theme: "dark",
     mode: "horizontal",
     defaultSelectedKeys: url
-  }, _Routes__WEBPACK_IMPORTED_MODULE_4__["default"].general.routes.map(function (NavItem) {
+  }, _Routes__WEBPACK_IMPORTED_MODULE_5__["default"].general.routes.map(function (NavItem) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd_lib_menu__WEBPACK_IMPORTED_MODULE_3___default.a.Item, {
       key: "menu-".concat(NavItem.route)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
       href: route(NavItem.route)
     }, NavItem.name));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd_lib_menu__WEBPACK_IMPORTED_MODULE_3___default.a.Item, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    onClick: function onClick() {
-      return Object(_Hooks__WEBPACK_IMPORTED_MODULE_5__["useTheme"])("dark");
-    }
-  }, "Dark Theme")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd_lib_menu__WEBPACK_IMPORTED_MODULE_3___default.a.Item, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    onClick: function onClick() {
-      return Object(_Hooks__WEBPACK_IMPORTED_MODULE_5__["useTheme"])("light");
-    }
-  }, "Light Theme"))));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd_lib_menu__WEBPACK_IMPORTED_MODULE_3___default.a.Item, {
+    key: "dark",
+    onClick: applyTheme
+  }, "Dark Theme"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd_lib_menu__WEBPACK_IMPORTED_MODULE_3___default.a.Item, {
+    key: "light",
+    onClick: applyTheme
+  }, "Light Theme")));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
