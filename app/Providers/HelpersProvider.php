@@ -14,6 +14,7 @@ class HelpersProvider extends ServiceProvider
     public function register()
     {
         require_once app_path('Helpers/AuthUser.php');
+        require_once app_path('Helpers/Route.php');
     }
 
     /**

@@ -14,11 +14,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//TODO Create Additional Routes files in RouteServiceProvider. This file gets too stuffy
-Route::fallback(function () {
-    //Custom 404 page
-    dd('404 Error❗ God knows what you\'re looking for😠');
-});
+
 
 Route::get('/', function () {
     return Inertia::render('Home', [
