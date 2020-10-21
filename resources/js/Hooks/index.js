@@ -8,6 +8,7 @@ export {
     useExpose,
     useTitle,
     useTheme,
+    useThemeVar,
     useScroll,
     useSmoothRefresh
 } from "./lib/app";

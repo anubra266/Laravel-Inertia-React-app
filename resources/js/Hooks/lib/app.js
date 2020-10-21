@@ -93,6 +93,14 @@ export function useTheme(theme, extra = {}) {
 }
 
 /**
+ * Get Less Variable from running theme
+ * @param {string} variable Theme LESS variable to get
+ */
+export function useThemeVar(variable) {
+    return defTheme[`@${variable}`];
+}
+
+/**
  * Sets Title for Page
  * @param {string} title Page Title
  */
