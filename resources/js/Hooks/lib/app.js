@@ -84,7 +84,6 @@ export const useSmoothRefresh = refreshTime => {
  * Sets App theme
  * @param {string} theme Light or dark theme
  * @param {object} extra additional theme variables
-//  * @param {object} cm callback after theme change
  */
 export function useTheme(theme, extra = {}) {
     return new Promise(resolve => {
