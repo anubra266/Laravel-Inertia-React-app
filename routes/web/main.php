@@ -1,20 +1,9 @@
 <?php
 
 use App\Http\Requests\ContactMessage;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return Inertia::render('Home', [
@@ -32,8 +21,8 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::post('/submit', function (ContactMessage $request) {
-    $message = $request->validated();
-    return redirect()->back()->with('success', 'Data accepted');
+    $message = (object)$request->validated();
+    return redirect()->back()->with('success', "Data accepted! $message->first_name");
 })->name('contact.message');
 
 Route::get('/blog', function () {
