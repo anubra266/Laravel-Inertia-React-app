@@ -7,7 +7,9 @@ class ContactHelper {
     submit(data) {
         this.load(true);
         //*Inertia implements the custom methods
-        Inertia.put("/submit", data).then(() => this.load(false));
+        Inertia.post(route("contact.message"), data).then(() =>
+            this.load(false)
+        );
     }
 }
 export default ContactHelper;
