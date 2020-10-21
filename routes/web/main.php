@@ -30,7 +30,7 @@ Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
 
-Route::put('/submit', function (Request $request) {
+Route::post('/submit', function (Request $request) {
     $request->validate([
         'first_name' => 'required',
         'last_name' => 'required',
