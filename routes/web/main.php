@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Requests\ContactMessage;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
@@ -30,7 +31,7 @@ Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
 
-Route::post('/submit', function (Request $request) {
+Route::post('/submit', function (ContactMessage $request) {
     $request->validate([
         'first_name' => 'required',
         'last_name' => 'required',
