@@ -13,7 +13,7 @@ class ContactMessage extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -28,6 +28,32 @@ class ContactMessage extends FormRequest
             'last_name' => 'required|string',
             'email' => 'required|email',
             'message' => 'required|string'
+        ];
+    }
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'email.email' => 'You must provide a valid Email Address.'
+        ];
+    }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [
+            'first_name' => 'First Name',
+            'last_name' => 'Last Name',
+            'email' => 'Email Address',
+            'message' => 'Message'
         ];
     }
 }
