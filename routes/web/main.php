@@ -32,12 +32,7 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::post('/submit', function (ContactMessage $request) {
-    $request->validate([
-        'first_name' => 'required',
-        'last_name' => 'required',
-        'email' => 'required',
-        'message' => 'required',
-    ]);
+    $message = $request->validated();
     return redirect()->back()->with('success', 'Data accepted');
 })->name('contact.message');
 
