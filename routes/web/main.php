@@ -38,7 +38,7 @@ Route::post('/submit', function (Request $request) {
         'message' => 'required',
     ]);
     return redirect()->back()->with('success', 'Data accepted');
-})->name('submit');
+})->name('contact.message');
 
 Route::get('/blog', function () {
     return Inertia::render('Blog');
