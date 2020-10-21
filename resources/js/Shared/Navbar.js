@@ -17,11 +17,14 @@ function Navbar() {
     };
     const url = getUrl();
 
-    const applyTheme = ({ key: theme }) => {
-        message.loading({ key: 1, content: "Applying Theme" });
-        useTheme(theme, {}, () => {
-            message.destroy(1);
+    const applyTheme = async ({ key: theme }) => {
+        message.loading({
+            key: 1,
+            content: "Applying Theme"
         });
+        setTimeout(() => {
+            useTheme(theme).then(() => message.destroy(1));
+        }, 500);
     };
 
     return (
