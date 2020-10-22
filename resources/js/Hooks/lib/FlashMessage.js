@@ -13,16 +13,10 @@ const FlashMessage = () => {
             flash[status] && message[status](flash[status]);
         });
     }, [flash]);
+    //* Inform client of errors in requests
     useEffect(() => {
         Object.keys(errors).length > 0 &&
-            message.error(
-                Object.keys(errors)
-                    .reduce((acc, err) => {
-                        acc.push(`${errors[err][0]} `);
-                        return acc;
-                    }, [])
-                    .join("")
-            );
+            message.error("There are errors in the form");
     }, [errors]);
 };
 
