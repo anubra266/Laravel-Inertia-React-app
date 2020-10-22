@@ -1,11 +1,6 @@
 import { InertiaProgress } from "@inertiajs/progress";
 import { useThemeVar } from "@/Hooks";
 
-/*
-    TODO See getting variables from window.less
-    TODO get the @{primary-color and mutate the progressBar object, insert it as color.
-*/
-
 const progressBar = {
     delay: 0,
 

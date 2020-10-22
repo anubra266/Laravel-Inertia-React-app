@@ -6,6 +6,7 @@ import { useProgressBar } from "./progressBar";
 
 const app = document.getElementById("app");
 useProgressBar();
+
 render(
     <CatchError>
         <React.Fragment>
