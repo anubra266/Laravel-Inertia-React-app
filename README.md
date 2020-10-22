@@ -26,27 +26,22 @@ This is my Inertia boilerplate for future projects with React. So it is Inertia-
 
 ## How do I set this up
 
-> git clone [https://github.com/anubra266/Inertia-App.git]() myappname
+* Click Use as Template up there.
+* Follow the self explanatory Steps.
+* Clone your generated Repo Locally
+* In the Root of your local Repository;
 
-> composer install
-
-> npm install
-
-> npm run dev
-
-> cp .env.example .env
-
-> php artisan key:generate
-
-> php artisan ziggy:generate
-
-
+        composer install
+        npm install
+        npm run dev
+        cp .env.example .env
+        php artisan key:generate
+        php artisan ziggy:generate
 
 ### Apps started with this Template
 
--   [at-School](https://at-school.xyz)
+-   [at-School](https://github.com/anubra266/at-school.xyz) - [https://at-school.xyz](https://at-school.xyz)
 
-**If you use this Template, please reach out, so I can list your app here😃**
 
-### I gat some concepts [Here](./readme/Concepts.md) tho'
-### [Highlights](./readme/Highlights.md) I could forget too.
+### [Concepts.md](./readme/Concepts.md)
+### [Highlights.md](./readme/Highlights.md)

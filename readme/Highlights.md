@@ -1,4 +1,4 @@
-Whatchu Forgetting?
+## Just Reminders 😅
 
 * Make Hard Visits with 
     ```
