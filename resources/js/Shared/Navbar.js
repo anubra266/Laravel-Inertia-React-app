@@ -23,7 +23,7 @@ function Navbar() {
             content: "Applying Theme"
         });
         setTimeout(() => {
-            useTheme(theme).then(() => message.destroy(1));
+            useTheme({ theme }).then(() => message.destroy(1));
         }, 500);
     };
 
@@ -34,7 +34,11 @@ function Navbar() {
                 {routes.general.routes.map(NavItem => {
                     return (
                         <Menu.Item key={`menu-${NavItem.route}`}>
-                            <InertiaLink href={route(NavItem.route)}>
+                            <InertiaLink
+                                preserveState
+                                preserveScroll
+                                href={route(NavItem.route)}
+                            >
                                 {NavItem.name}
                             </InertiaLink>
                         </Menu.Item>

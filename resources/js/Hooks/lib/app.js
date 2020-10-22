@@ -79,13 +79,14 @@ export const useSmoothRefresh = refreshTime => {
  * @param {string} theme Light or dark theme
  * @param {object} extra additional theme variables
  */
-export function useTheme(theme, extra = {}) {
+export function useTheme(props) {
     return new Promise(resolve => {
-        const vars = theme
-            ? theme === "light"
+        const vars = props.theme
+            ? props.theme === "light"
                 ? { ...lightTheme, ...defTheme }
                 : { ...darkTheme }
             : {};
+        const extra = props.extra ? props.extra : {};
         window.less.modifyVars({ ...vars, ...extra }).then(() => {
             resolve();
         });
