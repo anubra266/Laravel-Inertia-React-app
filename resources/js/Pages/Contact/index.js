@@ -1,8 +1,7 @@
 //* libraries
-import React, { useState, useEffect } from "react";
-import { usePage } from "@inertiajs/inertia-react";
+import React, { useState } from "react";
 //* Hooks and Helpers
-import { useFlashMessage, useTitle } from "@/Hooks";
+import { useTitle } from "@/Hooks";
 import ContactHelper from "@/Helpers/Contact";
 //* Library Components
 import Form from "antd/lib/form";
@@ -12,15 +11,13 @@ import Card from "antd/lib/card";
 import Site from "@/Shared/layout";
 function Contact() {
     useTitle("Contact");
-    useFlashMessage();
-    const { errors } = usePage();
     const [loading, setLoading] = useState(false);
+    const [errors, setErrors] = useState({});
     const Handle = new ContactHelper(setLoading);
 
     function handleSubmit(data) {
-        Handle.submit(data);
+        Handle.submit(data, setErrors);
     }
-
     return (
         <Site>
             <Card>
@@ -28,7 +25,10 @@ function Contact() {
                     layout="vertical"
                     onFinish={handleSubmit}
                     initialValues={{
-                        first_name: "Abraham"
+                        first_name: "Abraham",
+                        last_name: "Aremu",
+                        // email: "anubra266@gmail.com",
+                        message: "Kust Saying Hi!"
                     }}
                 >
                     <Form.Item
@@ -41,7 +41,7 @@ function Contact() {
                             }
                         ]}
                         validateStatus={errors.first_name && "error"}
-                        help={errors.first_name && errors.first_name[0]}
+                        help={errors.first_name}
                     >
                         <Input placeholder="First Name" />
                     </Form.Item>
@@ -56,21 +56,21 @@ function Contact() {
                             }
                         ]}
                         validateStatus={errors.last_name && "error"}
-                        help={errors.last_name && errors.last_name[0]}
+                        help={errors.last_name}
                     >
                         <Input placeholder="Last Name" />
-                    </Form.Item> 
+                    </Form.Item>
                     <Form.Item
                         label="Email"
                         name="email"
                         rules={[
                             {
-                                required: true,
+                                // required: true,
                                 message: "Please input Email!"
                             }
                         ]}
                         validateStatus={errors.email && "error"}
-                        help={errors.email && errors.email[0]}
+                        help={errors.email}
                     >
                         <Input type="email" placeholder="Email" />
                     </Form.Item>
@@ -84,7 +84,7 @@ function Contact() {
                             }
                         ]}
                         validateStatus={errors.message && "error"}
-                        help={errors.message && errors.message[0]}
+                        help={errors.message}
                     >
                         <Input.TextArea placeholder="message" />
                     </Form.Item>
