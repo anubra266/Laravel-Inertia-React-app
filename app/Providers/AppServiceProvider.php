@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerInertia();
+        //
     }
 
     /**
@@ -26,30 +26,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-    }
-
-    public function registerInertia()
-    {
-        Inertia::version(function () {
-            return md5_file(public_path('mix-manifest.json'));
-        });
-
-        Inertia::share([
-            //* Make errors available to react
-            'errors' => function () {
-                return Session::get('errors')
-                    ? Session::get('errors')->getBag('default')->getMessages()
-                    : (object) [];
-            },
-            //* Send flash messages
-            'flash' => function () {
-                return [
-                    'success' => Session::get('success'),
-                    'error' => Session::get('error'),
-                    'warning' => Session::get('warning'),
-                    'info' => Session::get('info'),
-                ];
-            },
-        ]);
     }
 }
