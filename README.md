@@ -48,4 +48,5 @@ This is my Inertia boilerplate for future projects with React. So it is Inertia-
 
 **If you use this Template, please reach out, so I can list your app here😃**
 
-### I gat some concepts [Here](Concepts.md) tho'
+### I gat some concepts [Here](./readme/Concepts.md) tho'
+### [Highlights](./readme/Highlights.md) I could forget too.
