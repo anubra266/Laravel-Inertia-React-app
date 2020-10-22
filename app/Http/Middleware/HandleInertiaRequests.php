@@ -38,6 +38,10 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             'appName' => config('app.name'),
+            //* send user info
+            'auth' => fn () => [
+                'user' => optional($request->user())->only(['first_name', 'email']),
+            ],
             //* Send flash messages
             'flash' => fn () => $request->session()->only(['success', 'error', 'warning', 'info']),
         ]);
