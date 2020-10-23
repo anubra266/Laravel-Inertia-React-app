@@ -16,31 +16,31 @@ trait Routes
             [
                 "name" => "Home",
                 "route" => "home",
-                "layout" => "home",
+                "layout" => "general",
                 "show" => true
             ],
             [
                 "name" => "About",
                 "route" => "about",
-                "layout" => "home",
+                "layout" => "general",
                 "show" => true
             ],
             [
                 "name" => "Contact",
                 "route" => "contact",
-                "layout" => "homei",
+                "layout" => "general",
                 "show" => true
             ],
             [
                 "name" => "Blog",
-                "layout" => "home",
                 "route" => "blog",
-                "show" => false
+                "layout" => "general",
+                "show" => true
             ],
             [
                 "name" => "Propsy",
                 "route" => "propsy",
-                "layout" => "home",
+                "layout" => "general",
                 "show" => true
             ],
         ];

@@ -7,7 +7,8 @@ import message from "antd/lib/message";
 import { useTheme } from "@/Hooks";
 
 function Navbar() {
-    const routes = usePage().props.HomeRoutes;
+    const routes = usePage().props.GeneralRoutes;
+
     const getUrl = () => {
         const location = window.location.href;
         const present_route = routes.find(

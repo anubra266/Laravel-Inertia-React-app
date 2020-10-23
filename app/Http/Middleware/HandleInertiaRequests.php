@@ -46,7 +46,7 @@ class HandleInertiaRequests extends Middleware
             ],
             //* Send flash messages
             'flash' => fn () => $request->session()->only(['success', 'error', 'warning', 'info']),
-            'HomeRoutes' => $this->sortRoutes('home')
+            'GeneralRoutes' => $this->sortRoutes('general')
         ]);
     }
 }
