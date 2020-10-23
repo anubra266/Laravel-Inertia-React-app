@@ -15,7 +15,7 @@ if (!function_exists('backward')) {
 if (!function_exists('visit')) {
     /**
      * Redirect to any route
-     * @param string $route Route to visit
+     * @param string $route Named route to visit
      * @param string $status Status of Request Response
      * @param string $response The Request's response
      */
