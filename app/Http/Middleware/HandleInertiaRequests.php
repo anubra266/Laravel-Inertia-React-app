@@ -39,14 +39,21 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request)
     {
         return array_merge(parent::share($request), [
+            //* share app info
             'appName' => config('app.name'),
-            //* send user info
+
+            //* share user info
             'auth' => fn () => [
                 'user' => optional($request->user())->only(['first_name', 'email']),
             ],
-            //* Send flash messages
+
+            //* share flash messages
             'flash' => fn () => $request->session()->only(['success', 'error', 'warning', 'info']),
-            'GeneralRoutes' => $this->sortRoutes('general')
+
+            //* share routes
+            'routes' => fn () => [
+                'general' => $this->sortRoutes('general')
+            ]
         ]);
     }
 }
