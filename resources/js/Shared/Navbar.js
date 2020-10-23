@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { InertiaLink } from "@inertiajs/inertia-react";
+import { InertiaLink, usePage } from "@inertiajs/inertia-react";
 import Layout from "antd/lib/layout";
 import Menu from "antd/lib/menu";
 import message from "antd/lib/message";
 
-import routes from "./Routes";
 import { useTheme } from "@/Hooks";
 
 function Navbar() {
+    const routes = usePage().props.HomeRoutes;
     const getUrl = () => {
         const location = window.location.href;
-        const present_route = routes.general.routes.find(
+        const present_route = routes.find(
             r => route(r.route).template === location
         );
         return [`menu-${present_route.route}`];
@@ -31,7 +31,7 @@ function Navbar() {
         <Layout.Header className="header">
             <div className="logo" />
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={url}>
-                {routes.general.routes.map(NavItem => {
+                {routes.map(NavItem => {
                     return (
                         <Menu.Item key={`menu-${NavItem.route}`}>
                             <InertiaLink
