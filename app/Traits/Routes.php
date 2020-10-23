@@ -2,56 +2,27 @@
 
 namespace App\Traits;
 
-use Illuminate\Support\Arr;
+use App\Traits\Routes\General;
 
 trait Routes
 {
+    use General;
     /**
      * Return all routes
      * @return array
      */
-    public function AllRoutes()
+    public function AllRoutes($layout)
     {
-        return [
-            [
-                "name" => "Home",
-                "route" => "home",
-                "layout" => "general",
-                "show" => true
-            ],
-            [
-                "name" => "About",
-                "route" => "about",
-                "layout" => "general",
-                "show" => true
-            ],
-            [
-                "name" => "Contact",
-                "route" => "contact",
-                "layout" => "general",
-                "show" => true
-            ],
-            [
-                "name" => "Blog",
-                "route" => "blog",
-                "layout" => "general",
-                "show" => true
-            ],
-            [
-                "name" => "Propsy",
-                "route" => "propsy",
-                "layout" => "general",
-                "show" => true
-            ],
+        $routes =  [
+            "general" => $this->GeneralRoutes(),
         ];
+        return $routes[$layout];
     }
 
 
     public function sortRoutes($layout)
     {
-        $routes = collect($this->AllRoutes());
-        return  $routes->filter(function ($route) use ($layout) {
-            return (($route['layout'] === $layout) && ($route['show']));
-        })->values()->all();
+        $routes = collect($this->AllRoutes($layout));
+        return $routes->filter(fn ($route) => $route['show'])->values()->all();
     }
 }
