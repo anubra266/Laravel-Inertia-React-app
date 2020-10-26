@@ -21,6 +21,6 @@ if (!function_exists('visit')) {
      */
     function visit($route, $status = '', $response = '')
     {
-        return redirect()->route(...$route)->with($status, $response);
+        return redirect()->route($route[0], $route[1])->with($status, $response);
     }
 }
