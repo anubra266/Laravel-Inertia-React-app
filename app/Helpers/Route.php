@@ -8,7 +8,7 @@ if (!function_exists('backward')) {
      */
     function backward($status = '', $response = '')
     {
-        return redirect()->back()->with($status, $response);
+        return back()->with($status, $response);
     }
 }
 
