@@ -12,8 +12,8 @@ trait General
     {
         return [
             [
-                "name" => "Home",
-                "route" => "home",
+                "name" => "Index",
+                "route" => "index",
                 "show" => true
             ],
             [

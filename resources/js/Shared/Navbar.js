@@ -19,13 +19,12 @@ function Navbar() {
     const url = getUrl();
 
     const applyTheme = async ({ key: theme }) => {
-        message.loading({
+        await message.loading({
             key: 1,
-            content: "Applying Theme"
+            content: "Applying Theme",
+            duration: 0.1 
         });
-        setTimeout(() => {
-            useTheme({ theme }).then(() => message.destroy(1));
-        }, 500);
+        await useTheme({ theme }).then(() => message.destroy(1));
     };
 
     return (
@@ -50,6 +49,9 @@ function Navbar() {
                 </Menu.Item>
                 <Menu.Item key="light" onClick={applyTheme}>
                     Light Theme
+                </Menu.Item>
+                <Menu.Item key="login">
+                    <a href={route("login")}>Login</a>
                 </Menu.Item>
             </Menu>
         </Layout.Header>

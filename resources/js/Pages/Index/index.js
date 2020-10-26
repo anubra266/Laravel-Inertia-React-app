@@ -6,24 +6,24 @@ import Button from "antd/lib/button";
 import Space from "antd/lib/space";
 import { BsFillHouseFill } from "react-icons/bs";
 
-function Home() {
-    useTitle("Home");
+function Index() {
+    useTitle("Index");
 
     const [height, setHeight] = useState(0);
 
     const [lay, layout] = useDualRef();
 
-    const home = useDualRef(true, updateHeight);
+    const index = useDualRef(true, updateHeight);
 
     //? Seems the callback must be defined before the hook if cb is defined as const
     function updateHeight(node) {
-        setHeight(node.getBoundingClientRect().height); 
+        setHeight(node.getBoundingClientRect().height);
     }
     return (
         <Site ref={layout}>
             <Card>
-                <div ref={home}>
-                    I'm the Home component! of height {Math.round(height)}px{" "}
+                <div ref={index}>
+                    I'm the Index component! of height {Math.round(height)}px{" "}
                     <BsFillHouseFill /> <br />
                     <Space>
                         <Button
@@ -45,4 +45,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Index;

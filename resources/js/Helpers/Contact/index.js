@@ -15,8 +15,7 @@ class ContactHelper {
                 onFinish: () => this.load(false),
                 onSuccess: page => {
                     const errors = page.props.errors.contact;
-                    setErrors(errors);
-                    console.log(page);
+                    errors && setErrors(errors);
                 }
             }
         );

@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return Inertia::render('Home', [
+    return Inertia::render('Index', [
         'users' => ''
     ]);
-})->name('home');
+})->name('index');
 
 Route::get('/about', function () {
     return Inertia::render('About');
@@ -23,7 +23,7 @@ Route::get('/contact', function () {
 
 Route::post('/submit', function (ContactMessage $request) {
     $message = (object)$request->validated();
-    return redirect()->back()->with('success', "Data accepted! $message->first_name");
+    return backward('success', "Data accepted! $message->first_name");
 })->name('contact.message');
 
 Route::get('/blog', function () {
