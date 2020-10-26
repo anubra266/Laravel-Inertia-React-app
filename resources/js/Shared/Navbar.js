@@ -10,11 +10,8 @@ function Navbar() {
     const routes = usePage().props.routes.general;
 
     const getUrl = () => {
-        const location = window.location.href;
-        const present_route = routes.find(
-            r => route(r.route).template === location
-        );
-        return [`menu-${present_route.route}`];
+        const present = routes.find(r => r.present);
+        return `menu-${present.route}`;
     };
     const url = getUrl();
 
@@ -22,7 +19,7 @@ function Navbar() {
         await message.loading({
             key: 1,
             content: "Applying Theme",
-            duration: 0.1 
+            duration: 0.1
         });
         await useTheme({ theme }).then(() => message.destroy(1));
     };

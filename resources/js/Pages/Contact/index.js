@@ -16,7 +16,7 @@ function Contact() {
     const Handle = new ContactHelper(setLoading);
 
     function handleSubmit(data) {
-        Handle.submit(data, setErrors);
+        Handle.submit(data, setErrors); 
     }
     return (
         <Site>
