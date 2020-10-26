@@ -7,9 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return Inertia::render('Index', [
-        'users' => ''
-    ]);
+    return Inertia::render('Index', []);
 })->name('index');
 
 Route::get('/about', function () {
