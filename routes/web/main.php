@@ -3,7 +3,6 @@
 use App\Http\Requests\ContactMessage;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
-//TODO Check reduce antdesign navbar in mobile
 
 
 Route::get('/', function () {
