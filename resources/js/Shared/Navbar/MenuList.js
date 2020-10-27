@@ -4,7 +4,7 @@ import Menu from "antd/lib/menu";
 import message from "antd/lib/message";
 import { useTheme } from "@/Hooks";
 
-const RightMenu = props => {
+const MenuList = props => {
     const routes = usePage().props.routes.general;
 
     const getUrl = () => {
@@ -54,4 +54,4 @@ const RightMenu = props => {
         </Menu>
     );
 };
-export default RightMenu;
+export default MenuList;

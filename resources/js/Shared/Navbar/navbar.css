@@ -22,21 +22,21 @@
 .menuCon .ant-menu-horizontal {
     border-bottom: none;
 }
-.logo {
-    width: 150px;
-    height: 45px;
+.navLogo {
     float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0 15px;
+}
+.navLogo a {
+    font-weight: 700;
+    font-size: large;
 }
 
 .barsMenu {
     float: right;
     height: 32px;
     padding: 6px;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 15px;
+    margin-right: 0px;
     display: none;
     background: none;
 }
@@ -45,7 +45,7 @@
     display: block;
     width: 20px;
     height: 2px;
-    background: #1890ff;
+    background: #ffffff;
     position: relative;
 }
 
@@ -57,7 +57,7 @@
     top: -6px;
     left: 0;
     height: 2px;
-    background: #1890ff;
+    background: #ffffff;
 }
 
 .barsBtn:after {

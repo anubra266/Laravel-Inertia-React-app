@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MenuList from "./MenuList";
 import Typography from "antd/lib/typography";
+import Layout from "antd/lib/layout";
 import { Drawer, Button } from "antd";
 import "./navbar.css";
 const Navbar = () => {
@@ -14,12 +15,10 @@ const Navbar = () => {
         setVisible(false);
     };
     return (
-        <React.Fragment>
+        <Layout.Header>
             <div className="menuCon">
-                <div className="logo">
-                    <Typography.Title type="secondary" level={3}>
-                        InertiaApp
-                    </Typography.Title>
+                <div className="navLogo">
+                    <a style={{ color: "white" }}>InertiaApp</a>
                 </div>
                 <div className="menu">
                     <MenuList />
@@ -36,7 +35,7 @@ const Navbar = () => {
                     <MenuList mobile />
                 </Drawer>
             </div>
-        </React.Fragment>
+        </Layout.Header>
     );
 };
 export default Navbar;
