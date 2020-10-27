@@ -3,7 +3,8 @@ import "antd/dist/antd.css";
 
 import Layout from "antd/lib/layout";
 
-import Navbar from "@/Shared/Navbar";
+import Navbar from "@/Shared/Navbar/index";
+// import Navbar from "@/Shared/Navbar";
 
 import { useExpose, useFlashMessage } from "@/Hooks";
 

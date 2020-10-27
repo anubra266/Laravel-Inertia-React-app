@@ -1,0 +1,103 @@
+.whitebg {
+    background: #fff !important;
+}
+.menuCon {
+    width: 100%;
+    float: left;
+}
+
+.menuCon .ant-menu-item {
+    padding: 0px 5px;
+}
+
+.menuCon .ant-menu-submenu-title {
+    padding: 10px 20px;
+}
+
+.menuCon .ant-menu-item a,
+.menuCon .ant-menu-submenu-title a {
+    padding: 10px 15px;
+}
+
+.menuCon .ant-menu-horizontal {
+    border-bottom: none;
+}
+.logo {
+    width: 150px;
+    height: 45px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.barsMenu {
+    float: right;
+    height: 32px;
+    padding: 6px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: none;
+    background: none;
+}
+
+.barsBtn {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #1890ff;
+    position: relative;
+}
+
+.barsBtn:after,
+.barsBtn:before {
+    content: attr(x);
+    width: 20px;
+    position: absolute;
+    top: -6px;
+    left: 0;
+    height: 2px;
+    background: #1890ff;
+}
+
+.barsBtn:after {
+    top: auto;
+    bottom: -6px;
+}
+
+.ant-drawer-body {
+    padding: 0;
+}
+
+.barsMenu > span {
+    display: block;
+}
+
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item,
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-submenu {
+    display: inline-block;
+    width: 100%;
+}
+
+.ant-drawer-body .ant-menu-horizontal {
+    border-bottom: none;
+}
+
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover {
+    border-bottom-color: transparent;
+}
+
+@media (max-width: 767px) {
+    .barsMenu {
+        display: inline-block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menuCon .ant-menu-item,
+    .menuCon .ant-menu-submenu-title {
+        padding: 1px 20px;
+    }
+}

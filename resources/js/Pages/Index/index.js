@@ -25,7 +25,7 @@ function Index() {
                 <div ref={index}>
                     I'm the Index component! of height {Math.round(height)}px{" "}
                     <BsFillHouseFill /> <br />
-                    <Space>
+                    <Space direction="vertical">
                         <Button
                             type="primary"
                             onClick={() => lay.current.lay_func()}
