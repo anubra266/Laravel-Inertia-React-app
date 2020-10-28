@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { InertiaLink, usePage } from "@inertiajs/inertia-react";
 import Menu from "antd/lib/menu";
 import message from "antd/lib/message";
@@ -33,8 +33,8 @@ const MenuList = props => {
                 return (
                     <Menu.Item key={`menu-${NavItem.route}`}>
                         <InertiaLink
-                            preserveState
                             preserveScroll
+                            preserveState
                             href={route(NavItem.route)}
                         >
                             {NavItem.name}
