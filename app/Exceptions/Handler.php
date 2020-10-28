@@ -5,7 +5,6 @@ namespace App\Exceptions;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 use Inertia\Inertia;
-use Illuminate\Support\Facades\App;
 
 class Handler extends ExceptionHandler
 {
@@ -55,15 +54,16 @@ class Handler extends ExceptionHandler
         $response = parent::render($request, $exception);
         if (
             //show user friendly error pages in production
-            // App::environment('local')
-            // App::environment('development')
-            App::environment('production')
-            && $request->header('X-Inertia')
+            !app()->environment('local')
             && in_array($response->status(), [500, 503, 404, 403])
         ) {
             return Inertia::render('Error', ['status' => $response->status()])
                 ->toResponse($request)
                 ->setStatusCode($response->status());
+        } else if ($response->status() === 419) {
+            return back()->with([
+                'warning' => 'The page expired, please try again.',
+            ]);
         }
         return $response;
     }
