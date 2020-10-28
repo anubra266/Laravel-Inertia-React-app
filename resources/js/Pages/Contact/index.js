@@ -16,10 +16,9 @@ function Contact() {
     const Handle = new ContactHelper(setLoading);
 
     function handleSubmit(data) {
-        Handle.submit(data, setErrors); 
+        Handle.submit(data, setErrors);
     }
     return (
-        <Site>
             <Card>
                 <Form
                     layout="vertical"
@@ -99,8 +98,8 @@ function Contact() {
                     </Form.Item>
                 </Form>
             </Card>
-        </Site>
     );
 }
+Contact.layout = page => <Site children={page} />;
 
 export default Contact;

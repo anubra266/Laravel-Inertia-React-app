@@ -6,11 +6,8 @@ import Card from "antd/lib/card";
 function About() {
     useTitle("About");
 
-    return (
-        <Site>
-            <Card className="card-body">I'm an About component!</Card>
-        </Site>
-    );
+    return <Card className="card-body">I'm an About component!</Card>;
 }
+About.layout = page => <Site children={page} />;
 
 export default About;

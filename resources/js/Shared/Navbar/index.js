@@ -18,7 +18,7 @@ const Navbar = () => {
         <Layout.Header>
             <div className="menuCon">
                 <div className="navLogo">
-                    <a style={{ color: "white" }}>InertiaApp</a>
+                    <span>InertiaApp</span>
                 </div>
                 <div className="menu">
                     <MenuList />
