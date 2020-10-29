@@ -25,7 +25,7 @@ function Index() {
     );
 }
 /*
- * This way, the state of the Layout does not change and can be shared across visits
+ * This way(Persisted Layouts), the state of the Layout does not change and can be shared across visits
  * Watch The animated Logo while navigating pages
  */
 Index.layout = page => <Site children={page} />;

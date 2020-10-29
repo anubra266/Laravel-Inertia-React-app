@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useRememberedState } from "@inertiajs/inertia-react";
 import "braft-editor/dist/index.css";
 import BraftEditor from "braft-editor";
 const parse = require("html-react-parser");
@@ -10,12 +9,10 @@ import { useTitle } from "@/Hooks";
 function Blog() {
     useTitle("Edit Blog");
     const initBraft = BraftEditor.createEditorState("Editor Content");
-    const [editorState, setEditorState] = useState({ data: initBraft });
+    const [editorState, setEditorState] = useState(initBraft);
     const handleBraftChange = editorState => {
-        setEditorState({ data: editorState });
+        setEditorState(editorState);
     };
-    // const remember = useRememberedState(editorState);
-    // console.log('remember', remember)
     return (
         <Card>
             I will use Dante2 Editor for this{" "}
@@ -40,15 +37,15 @@ function Blog() {
             <div>
                 <BraftEditor
                     language="en"
-                    value={editorState.data}
+                    value={editorState}
                     onChange={handleBraftChange}
                 />
                 <strong>Preview</strong>
-                {parse(editorState.data.toHTML())}
+                {parse(editorState.toHTML())}
             </div>
         </Card>
     );
 }
-Blog.layout = page => <Site children={page} />
+Blog.layout = page => <Site children={page} />;
 
 export default Blog;

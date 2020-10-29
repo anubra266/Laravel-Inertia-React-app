@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import "antd/dist/antd.css";
 
 import Layout from "antd/lib/layout";
@@ -7,7 +7,7 @@ import Navbar from "@/Shared/Navbar/index";
 import SiteFooter from "./SiteFooter";
 import BackTop from "antd/lib/back-top";
 
-import { useExpose, useFlashMessage } from "@/Hooks";
+import { useFlashMessage } from "@/Hooks";
 const up = {
     height: 40,
     width: 40,
@@ -18,15 +18,8 @@ const up = {
     textAlign: "center",
     fontSize: 14
 };
-const layout = ({ children }, ref) => {
+const layout = ({ children }) => {
     useFlashMessage();
-    const lay_func = () => {
-        alert("function in Layout");
-    };
-    const lay_func2 = () => {
-        alert("function 2 in Layout");
-    };
-    useExpose(ref, { lay_func, lay_func2 });
 
     return (
         <Layout>
@@ -52,4 +45,4 @@ const layout = ({ children }, ref) => {
     );
 };
 
-export default forwardRef(layout);
+export default layout;
