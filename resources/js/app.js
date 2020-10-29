@@ -15,6 +15,12 @@ render(
                 resolveComponent={name =>
                     import(`@/Pages/${name}`).then(module => module.default)
                 }
+                transformProps={props => {
+                    return {
+                        //* Mutate the props passed to frontend here
+                        ...props
+                    };
+                }}
             />
         </React.Fragment>
     </CatchError>,
