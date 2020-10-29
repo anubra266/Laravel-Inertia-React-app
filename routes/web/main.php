@@ -6,11 +6,14 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return Inertia::render('Index', []);
+    return Inertia::render('Index');
 })->name('index');
 
 Route::get('/about', function () {
-    return Inertia::render('About');
+    $info = "A Boilerplate for Laravel - InertiaJs - React";
+    return Inertia::render('About', [
+        'info' => Inertia::lazy(fn () => $info)
+    ]);
 })->name('about');
 
 
