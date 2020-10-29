@@ -5,25 +5,25 @@ import Site from "@/Shared/layout";
 import Card from "antd/lib/card";
 import { Context, Provider } from "./userstore";
 
-export default function Propsy() {
+const Propsy = () => {
     useTitle("Propsy");
     const user = { name: "Abraham", age: 19 };
     const store = { user };
     return (
-        <Site>
-            <Card>
-                <div className="border">
-                    I'm an Propsy component, trying to avoid Prop Drilling.
-                    <br />
-                    He's {user.name}, aged {user.age}
-                    <Provider value={store}>
-                        <Child />
-                    </Provider>
-                </div>
-            </Card>
-        </Site>
+        <Card>
+            <div className="border">
+                I'm an Propsy component, trying to avoid Prop Drilling.
+                <br />
+                He's {user.name}, aged {user.age}
+                <Provider value={store}>
+                    <Child />
+                </Provider>
+            </div>
+        </Card>
     );
-}
+};
+Propsy.layout = page => <Site children={page} />;
+export default Propsy;
 
 const Child = () => {
     return (
