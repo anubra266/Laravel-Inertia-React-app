@@ -3,6 +3,7 @@ export {
     useDualRef,
     useDynamicRefs,
     useExpose,
+    useIprops,
     useTitle,
     useTheme,
     useThemeVar,

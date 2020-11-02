@@ -1,8 +1,8 @@
 //* libraries
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRememberedState } from "@inertiajs/inertia-react";
 //* Hooks and Helpers
-import { useTitle } from "@/Hooks";
+import { useIprops, useTitle } from "@/Hooks";
 import ContactHelper from "@/Helpers/Contact";
 //* Library Components
 import Form from "antd/lib/form";
@@ -14,28 +14,28 @@ function Contact() {
     useTitle("Contact");
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState({});
-    const [data, setData] = useRememberedState({ data: null });
+    const [data, setData] = useRememberedState();
     const Handle = new ContactHelper(setLoading);
+
+    const { contact } = useIprops();
 
     function handleSubmit(data) {
         Handle.submit(data, setErrors);
     }
-    console.log("data", data.data);
     return (
         <Card>
+            {contact}
             <Form
                 layout="vertical"
                 onFinish={handleSubmit}
-                onValuesChange={(a, b) => setData(d => ({ ...d, data: b }))}
+                onValuesChange={(a, b) => setData(b)}
                 initialValues={
-                    data.data
-                        ? data.data
-                        : {
-                              first_name: "Abraham",
-                              last_name: "Aremu",
-                              // email: "anubra266@gmail.com",
-                              message: "Kust Saying Hi!"
-                          }
+                    data || {
+                        first_name: "Abraham",
+                        last_name: "Aremu",
+                        // email: "anubra266@gmail.com",
+                        message: "Kust Saying Hi!"
+                    }
                 }
             >
                 <Form.Item

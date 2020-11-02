@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useImperativeHandle, useRef } from "react";
 import { Inertia } from "@inertiajs/inertia";
+import { usePage } from "@inertiajs/inertia-react";
 import darkTheme from "@/AntD/dark.json";
 import lightTheme from "@/AntD/light.json";
 import defTheme from "@/AntD/theme.json";
@@ -45,6 +46,13 @@ export const useExpose = (ref, instances) => {
     return useImperativeHandle(ref, () => {
         return { ...instances };
     });
+};
+
+/**
+ * Expose Inertia Page Props
+ */
+export const useIprops = () => {
+    return usePage().props;
 };
 
 /**
