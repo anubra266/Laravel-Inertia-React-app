@@ -8,11 +8,12 @@ const progressBar = {
 
     includeCSS: true,
 
-    showSpinner: true 
+    showSpinner: true
 };
 
 //? progress bar for request loads
 InertiaProgress.init(progressBar);
+
 export const useProgressBar = () => {
     return true;
 };

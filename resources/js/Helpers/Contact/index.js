@@ -3,8 +3,8 @@ import { Inertia } from "@inertiajs/inertia";
 class ContactHelper {
     constructor(load) {
         this.load = load;
-        //* Change to true to allow Request
-        this.confirmAction = false;
+        //* Change to false to deny Request
+        this.confirmAction = true;
     }
     submit(data, setErrors) {
         //*Inertia implements custom methods
@@ -23,7 +23,7 @@ class ContactHelper {
                 onSuccess: page => {
                     const errors = page.props.errors.contact;
                     errors && setErrors(errors);
-                }
+                },
             }
         );
     }

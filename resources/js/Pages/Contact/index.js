@@ -17,14 +17,15 @@ function Contact() {
     const [data, setData] = useRememberedState();
     const Handle = new ContactHelper(setLoading);
 
-    const { contact } = useIprops();
-
+    const { contact, message } = useIprops();
+ 
     function handleSubmit(data) {
         Handle.submit(data, setErrors);
     }
     return (
         <Card>
             {contact}
+            {message}
             <Form
                 layout="vertical"
                 onFinish={handleSubmit}
