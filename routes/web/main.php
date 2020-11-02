@@ -6,29 +6,29 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return Inertia::render('Index');
+    return inertia('Index');
 })->name('index');
 
 Route::get('/about', function () {
     $info = "A Boilerplate for Laravel - InertiaJs - React";
-    return Inertia::render('About', [
+    return inertia('About', [
         'info' => Inertia::lazy(fn () => $info)
     ]);
 })->name('about');
 
 
 Route::get('/contact', function () {
-    return Inertia::render('Contact');
+    return inertia('Contact');
 })->name('contact');
 
 Route::post('/submit', function (ContactMessage $request) {
     $message = (object)$request->validated();
-    return backward('success', "Data accepted! $message->first_name");
+    return backward('success', "Data accepted! $message->first_name")->with('error', 'No');
 })->name('contact.message');
 
 Route::get('/blog', function () {
-    return Inertia::render('Blog');
+    return inertia('Blog');
 })->name('blog');
 Route::get('/propsy', function () {
-    return Inertia::render('Propsy');
+    return inertia('Propsy');
 })->name('propsy');
