@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--SEO assets -->
-    <meta name="theme-color" content="{{$theme}}" />
+    <meta name="theme-color" content="{{$theme ?? ''}}" />
     <meta name="title" content="Inertia App - App Boilerplate" />
     <meta name="description" content="App Boilerplate for Laravel React" />
     <meta property="og:type" content="website" />
