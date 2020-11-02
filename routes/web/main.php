@@ -23,7 +23,8 @@ Route::get('/contact', function () {
 
 Route::post('/submit', function (ContactMessage $request) {
     $message = (object)$request->validated();
-    return backward('success', "Data accepted! $message->first_name")->with('error', 'No');
+    respond('contact', 'data Received');
+    return backward('success', "Data accepted! $message->first_name");
 })->name('contact.message');
 
 Route::get('/blog', function () {

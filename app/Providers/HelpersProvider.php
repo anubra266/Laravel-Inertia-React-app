@@ -15,6 +15,7 @@ class HelpersProvider extends ServiceProvider
     {
         require_once app_path('Helpers/AuthUser.php');
         require_once app_path('Helpers/Route.php');
+        require_once app_path('Helpers/Respond.php');
     }
 
     /**

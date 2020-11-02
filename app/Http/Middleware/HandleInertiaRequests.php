@@ -2,9 +2,10 @@
 
 namespace App\Http\Middleware;
 
-use Illuminate\Http\Request;
-use Inertia\Middleware;
 use App\Traits\Routes;
+use Inertia\Middleware;
+use Illuminate\Http\Request;
+use App\Helpers\Inertia\InertiaContainer;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -38,22 +39,26 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request)
     {
-        return array_merge(parent::share($request), [
-            //* share app info
-            'appName' => config('app.name'),
+        return array_merge(
+            parent::share($request),
+            [
+                //* share app info
+                'appName' => config('app.name'),
 
-            //* share user info
-            'auth' => fn () => [
-                'user' => optional($request->user())->only(['first_name', 'email']),
+                //* share user info
+                'auth' => fn () => [
+                    'user' => optional($request->user())->only(['first_name', 'email']),
+                ],
+
+                //* share flash messages
+                'flash' => fn () => $request->session()->only(['success', 'error', 'warning', 'info', 'message']),
+
+                //* share routes
+                'routes' => fn () => [
+                    'general' => $this->sortRoutes('general')
+                ],
             ],
-
-            //* share flash messages
-            'flash' => fn () => $request->session()->only(['success', 'error', 'warning', 'info']),
-
-            //* share routes
-            'routes' => fn () => [
-                'general' => $this->sortRoutes('general')
-            ]
-        ]);
+            InertiaContainer::flush()
+        );
     }
 }
