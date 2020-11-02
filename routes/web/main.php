@@ -23,7 +23,7 @@ Route::get('/contact', function () {
 
 Route::post('/submit', function (ContactMessage $request) {
     $message = (object)$request->validated();
-    respond('contact', 'data Received');
+    respond([['contact', 'Data Analysed'], ['message', 'Data Accepted']]);
     return backward('success', "Data accepted! $message->first_name");
 })->name('contact.message');
 
@@ -31,5 +31,5 @@ Route::get('/blog', function () {
     return inertia('Blog');
 })->name('blog');
 Route::get('/propsy', function () {
-    return inertia('Propsy');
+    return inertia('Propsy'); 
 })->name('propsy');

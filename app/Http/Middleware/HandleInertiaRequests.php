@@ -51,7 +51,7 @@ class HandleInertiaRequests extends Middleware
                 ],
 
                 //* share flash messages
-                'flash' => fn () => $request->session()->only(['success', 'error', 'warning', 'info', 'message']),
+                'flash' => fn () => $request->session()->only(['success', 'error', 'warning', 'info']),
 
                 //* share routes
                 'routes' => fn () => [
