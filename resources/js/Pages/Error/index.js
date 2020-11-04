@@ -2,6 +2,7 @@ import React from "react";
 import Result from "antd/lib/result";
 import Button from "antd/lib/button";
 import { InertiaLink } from "@inertiajs/inertia-react";
+import "antd/dist/antd.css";
 
 export default function ErrorPage({ status }) {
     const title = {
@@ -26,7 +27,7 @@ export default function ErrorPage({ status }) {
                 subTitle={description}
                 extra={
                     <Button type="primary">
-                        <InertiaLink href={route("home")}>Go Home</InertiaLink>
+                        <InertiaLink href="/">Go Home</InertiaLink>
                     </Button>
                 }
             />
