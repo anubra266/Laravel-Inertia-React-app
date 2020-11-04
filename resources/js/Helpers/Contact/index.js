@@ -1,4 +1,5 @@
 import { Inertia } from "@inertiajs/inertia";
+import message from "antd/lib/message";
 
 class ContactHelper {
     constructor(load) {
@@ -19,11 +20,14 @@ class ContactHelper {
                 onStart: () => this.load(true),
                 //* When Requests finish, end loader
                 onFinish: () => this.load(false),
-                //* When Response is received, handle response
-                onSuccess: page => {
-                    const errors = page.props.errors.contact;
-                    errors && setErrors(errors);
-                },
+                //* When Response is received, handle response(Page Props)
+                //* The props would also contain my custom session messages(respond())
+                onSuccess: ({ props }) => {
+                    const errors = props.errors.contact;
+                    //* If errors is not an empty object, display it
+                    setErrors(errors || {});
+                    props.flash.success && message.success(props.flash.success);
+                }
             }
         );
     }

@@ -18,7 +18,7 @@ function Contact() {
     const Handle = new ContactHelper(setLoading);
 
     const { contact, message } = useIprops();
- 
+
     function handleSubmit(data) {
         Handle.submit(data, setErrors);
     }
@@ -35,7 +35,7 @@ function Contact() {
                         first_name: "Abraham",
                         last_name: "Aremu",
                         // email: "anubra266@gmail.com",
-                        message: "Kust Saying Hi!"
+                        message: "Just Saying Hi!"
                     }
                 }
             >

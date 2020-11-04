@@ -7,7 +7,7 @@ import Navbar from "@/Shared/Navbar/index";
 import SiteFooter from "./SiteFooter";
 import BackTop from "antd/lib/back-top";
 
-import { useFlashMessage } from "@/Hooks";
+// import { useFlashMessage } from "@/Hooks";
 const up = {
     height: 40,
     width: 40,
@@ -19,7 +19,7 @@ const up = {
     fontSize: 14
 };
 const layout = ({ children }) => {
-    useFlashMessage();
+    // useFlashMessage();
 
     return (
         <Layout>
