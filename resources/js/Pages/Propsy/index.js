@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { useTitle } from "@/Hooks";
+import { useTitle } from "ab-hooks";
 import Site from "@/Shared/layout";
 import Card from "antd/lib/card";
 import { Context, Provider } from "./userstore";

@@ -1,5 +1,5 @@
 import { InertiaProgress } from "@inertiajs/progress";
-import { useThemeVar } from "@/Hooks";
+import { useThemeVar } from "ab-hooks";
 
 const progressBar = {
     delay: 0,

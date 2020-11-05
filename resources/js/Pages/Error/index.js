@@ -22,7 +22,7 @@ export default function ErrorPage({ status }) {
     return (
         <div>
             <Result
-                status={status}
+                status={status} 
                 title={title}
                 subTitle={description}
                 extra={

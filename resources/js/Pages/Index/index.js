@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useTitle, useDualRef } from "@/Hooks";
+import { useTitle, useDualRef } from "ab-hooks";
 import Site from "@/Shared/layout";
 import Card from "antd/lib/card";
 import { BsFillHouseFill } from "react-icons/bs";

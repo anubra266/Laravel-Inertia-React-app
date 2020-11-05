@@ -4,7 +4,7 @@ import BraftEditor from "braft-editor";
 const parse = require("html-react-parser");
 import Site from "@/Shared/layout";
 import Card from "antd/lib/card";
-import { useTitle } from "@/Hooks";
+import { useTitle } from "ab-hooks";
 
 function Blog() {
     useTitle("Edit Blog");
