@@ -38,7 +38,9 @@
 
 
 <body>
-    @inertia
+    <div id="app" data-page="{{ json_encode($page) }}">
+        <h1>loading...</h1>
+    </div>
     <link rel="stylesheet/less" type="text/css" href="color.less" />
     <script>
         window.less = {
