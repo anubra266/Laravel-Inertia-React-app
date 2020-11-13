@@ -1,35 +1,29 @@
 <?php
 
-use App\Http\Requests\ContactMessage;
 use Inertia\Inertia;
+use App\Http\Requests\ContactMessage;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return inertia('Index')->withViewData(['theme' => "#141414"]);;
-})->name('index');
+// $router->get('/user', [UserController::class, 'index']);
 
-Route::get('/about', function () {
+$router->get('/', fn () => inertia('Index')->withViewData(['theme' => "#141414"]))->name('index');
+
+
+$router->get('/about', function () {
     $info = "A Boilerplate for Laravel - InertiaJs - React";
     return inertia('About', [
         'info' => Inertia::lazy(fn () => $info)
     ]);
 })->name('about');
 
+$router->get('/contact', fn () => inertia('Contact'))->name('contact');
 
-Route::get('/contact', function () {
-    return inertia('Contact');
-})->name('contact');
-
-Route::post('/submit', function (ContactMessage $request) {
+$router->post('/submit', function (ContactMessage $request) {
     $message = (object)$request->validated();
     respond([['contact', 'Data Analysed'], ['message', 'Data Accepted']]);
     return backward('success', "Data accepted! $message->first_name");
 })->name('contact.message');
 
-Route::get('/blog', function () {
-    return inertia('Blog');
-})->name('blog');
-Route::get('/propsy', function () {
-    return inertia('Propsy'); 
-})->name('propsy');
+$router->get('/blog', fn () => inertia('Blog'))->name('blog');
+$router->get('/propsy', fn () => inertia('Propsy'))->name('propsy');
