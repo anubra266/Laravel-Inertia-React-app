@@ -7,11 +7,7 @@ import { useTheme } from "ab-hooks";
 const MenuList = props => {
     const routes = usePage().props.routes.general;
 
-    const getUrl = () => {
-        const present = routes.find(r => r.present);
-        return `menu-${present.route}`;
-    };
-    const url = getUrl();
+    const url = `menu-${route().current()}`;
 
     const applyTheme = async ({ key: theme }) => {
         await message.loading({

@@ -26,4 +26,5 @@ $router->post('/submit', function (ContactMessage $request) {
 })->name('contact.message');
 
 $router->get('/blog', fn () => inertia('Blog'))->name('blog');
-$router->get('/propsy', fn () => inertia('Propsy'))->name('propsy');
+//? Using Route::inertia static method.
+$router->inertia('/propsy', 'Propsy')->name('propsy');
