@@ -11,8 +11,6 @@
     },
     "devDependencies": {
         "@babel/preset-react": "^7.0.0",
-        "@inertiajs/inertia": "^0.6.1",
-        "@inertiajs/inertia-react": "^0.4.1",
         "ab-hooks": "^1.1.2",
         "antd-theme-generator": "^1.2.4",
         "axios": "^0.19",
@@ -33,10 +31,11 @@
         "react-use": "^15.3.3",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
-        "sass-loader": "^8.0.0",
-        "ziggy-js": "^0.9.4"
+        "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "@inertiajs/inertia": "^0.8.2",
+        "@inertiajs/inertia-react": "^0.5.1",
         "@inertiajs/progress": "^0.2.1",
         "Dante2": "^0.5.0-rc4",
         "antd": "^4.5.4",

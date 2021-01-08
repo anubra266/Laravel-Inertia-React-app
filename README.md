@@ -31,12 +31,13 @@ This is my Inertia boilerplate for future projects with React. So it is Inertia-
 * Clone your generated Repo Locally
 * In the Root of your local Repository;
 
-        composer install
-        npm install
-        npm run dev
-        cp .env.example .env
-        php artisan key:generate
-        php artisan ziggy:generate
+```bash
+composer install
+npm install
+npm run dev
+cp .env.example .env
+php artisan key:generate
+```
 
 ### Apps started with this Template
 
