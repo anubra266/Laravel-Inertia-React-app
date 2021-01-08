@@ -20,12 +20,14 @@ class ContactHelper {
                 onStart: () => this.load(true),
                 //* When Requests finish, end loader
                 onFinish: () => this.load(false),
+                // If errors are found, prevents the onSuccess Callback
+                onError:errors=>{
+                    //* If errors is not an empty object, display it
+                    setErrors(errors || {});
+                },
                 //* When Response is received, handle response(Page Props)
                 //* The props would also contain my custom session messages(respond())
                 onSuccess: ({ props }) => {
-                    const errors = props.errors.contact;
-                    //* If errors is not an empty object, display it
-                    setErrors(errors || {});
                     props.flash.success && message.success(props.flash.success);
                 }
             }
