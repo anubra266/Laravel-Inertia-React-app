@@ -23,7 +23,7 @@ class ContactHelper {
                 // If errors are found, prevents the onSuccess Callback
                 onError:errors=>{
                     //* If errors is not an empty object, display it
-                    setErrors(errors || {});
+                    setErrors(errors.contact || {});
                 },
                 //* When Response is received, handle response(Page Props)
                 //* The props would also contain my custom session messages(respond())
