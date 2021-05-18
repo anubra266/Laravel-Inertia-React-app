@@ -43,7 +43,7 @@
         "braft-editor": "^2.3.9",
         "dynamic-antd-theme": "^0.6.1",
         "html-react-parser": "^0.14.0",
-        "less-loader": "^7.0.1",
+        "less-loader": "^9.0.0",
         "react-icons": "^3.11.0"
     },
     "name": "inertiaapp"
